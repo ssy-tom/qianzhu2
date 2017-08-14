@@ -6,7 +6,7 @@
 				let box = document.getElementById('box');
 				let openBox = document.getElementById('openBox')
 				let Bbox = new Cboxc();
-				Bbox.ChuShi(openBox,box)
+				Bbox.ChuShi(openBox,box);
 				function Cboxc(){
 					this.ChuShi = function(openBox,box){
 						this.openBox = openBox;
