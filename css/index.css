@@ -20,10 +20,8 @@ html,body{
 	width: 100%;
       height: 100%;
       background: red;
-      font-size: 60px;
       color: #fff;
       text-align: center;
-      line-height: 600px;
       transition: ease .6s;
       position: relative;
 }
@@ -46,3 +44,297 @@ html,body{
       background: #000;
       transition: all .5s ease;
 }
+
+/*杨康 第二屏css样式开始*/
+#page2 {
+    position: relative;
+}
+
+#page2 .box {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    transition: all .5s;
+}
+
+#page2 .box .header {
+    width: 100%;
+    text-align: center;
+}
+
+#page2 .box .header i {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    height: 32px;
+    width: 320px;
+    background: url("../image/words.png") no-repeat 0px -294px;
+}
+
+#page2 .box .header span {
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: #333;
+}
+
+#page2 .box .main_content {
+    margin: 60px auto 0;
+    overflow: hidden;
+    width: 1140px;
+}
+
+#page2 .box .main_content li {
+    margin: 0 8px;
+    float: left;
+    width: 210px;
+    height: 300px;
+    background: url("../image/bg_green.png") no-repeat 0 300px;
+    transition: all .4s;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#page2 .box .main_content li:hover {
+    animation: page2one .3s ease .3s forwards;
+}
+
+@keyframes page2one {
+    0% {
+        background: url("../image/bg_green.png") no-repeat 0 300px;
+    }
+    100% {
+        background: url("../image/bg_green.png") no-repeat 0 0px;
+    }
+}
+
+#page2 .box .main_content li u {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 156px;
+    height: 156px;
+    margin-left: 30px;
+    transition: all .4s;
+    background: url("../image/words.png") no-repeat 0 -363px;
+}
+
+#page2 .box .main_content li .cl {
+    clip: rect(0px, 78px, 156px, 0px);
+}
+
+#page2 .box .main_content li .cr {
+    clip: rect(0px, 156px, 156px, 78px);
+}
+
+#page2 .box .main_content li:hover .cl {
+    clip: rect(156px, 78px, 156px, 0px);
+}
+
+#page2 .box .main_content li:hover .cr {
+    clip: rect(0, 156px, 0, 78px);
+}
+
+#page2 .box .main_content li i {
+    width: 76px;
+    height: 62px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 42px;
+}
+
+#page2 .box .main_content li.pc i {
+    background: url("../image/words.png") no-repeat -240px -357px
+}
+
+#page2 .box .main_content li.pc:hover i {
+    animation: pc .3s ease .3s forwards;
+}
+
+@keyframes pc {
+    0% {
+        background-position: -240px -357px;
+    }
+    100% {
+        background-position: -168px -357px;
+    }
+}
+
+#page2 .box .main_content li.yd i {
+    background: url('../image/words.png') no-repeat -404px -291px;
+}
+
+#page2 .box .main_content li.yd:hover i {
+    animation: yd .3s ease .3s forwards;
+}
+
+@keyframes yd {
+    0% {
+        background-position: -404px -291px;
+    }
+    100% {
+        background-position: -324px -291px;
+    }
+}
+
+#page2 .box .main_content li.xt i {
+    background: url('../image/words.png') no-repeat -415px -362px;
+}
+
+#page2 .box .main_content li.xt:hover i {
+    animation: xt .3s ease .3s forwards;
+}
+
+@keyframes xt {
+    0% {
+        background-position: -415px -362px;
+    }
+    100% {
+        background-position: -328px -362px;
+    }
+}
+
+#page2 .box .main_content li.yw i {
+    background: url('../image/words.png') no-repeat -244px -439px;
+}
+
+#page2 .box .main_content li.yw:hover i {
+    animation: yw .3s ease .3s forwards;
+}
+
+@keyframes yw {
+    0% {
+        background-position: -244px -439px;
+    }
+    100% {
+        background-position: -164px -439px;
+    }
+}
+
+#page2 .box .main_content li.yf i {
+    background: url('../image/words.png') no-repeat -422px -439px;
+}
+
+#page2 .box .main_content li.yf:hover i {
+    animation: yf .3s ease .3s forwards;
+}
+
+@keyframes yf {
+    0% {
+        background-position: -422px -439px;
+    }
+    100% {
+        background-position: -336px -439px;
+    }
+}
+
+#page2 .box .main_content li strong {
+    display: block;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#page2 .box .main_content li:hover strong {
+    animation: strong .3s ease .3s forwards;
+}
+
+@keyframes strong {
+    0% {
+        color: #000;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+#page2 .box label {
+    display: block;
+    height: 22px;
+    width: 298px;
+    margin: 0 auto;
+    text-align: center;
+    background: url("../image/words.png") no-repeat 0 -333px;
+}
+
+#page2 .box .main_content li p {
+    width: 100%;
+    position: absolute;
+    font-size: 14px;
+    top: 300px;
+    left: 0;
+    color: white;
+}
+
+#page2 .box .main_content li:hover p {
+    animation: Pposition .3s ease .3s forwards;
+}
+
+@keyframes Pposition {
+    0% {
+        top: 300px;
+    }
+    100% {
+        top: 200px;
+    }
+}
+
+@media (max-width: 1500px) {
+    #page2 .box .main_content {
+        width: 930px;
+        margin: 40px auto 0;
+    }
+
+    #page2 .box .main_content li {
+        width: 170px;
+        height: 270px;
+    }
+
+    #page2 .box .main_content li u {
+        display: none;
+    }
+
+    #page2 .box .main_content li strong {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 996px) {
+    #page2 .box .main_content {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    #page2 .box .main_content li {
+        width: 270px;
+        height: 80px;
+        margin: 30px 0 0 22px;
+        padding: 10px 0 6px 14px;
+    }
+
+    #page2 .box .main_content li u {
+        display: none;
+    }
+
+    #page2 .box .main_content li i {
+        margin-top: 0;
+        float: left;
+    }
+
+    #page2 .box .main_content li strong {
+        float: left;
+        margin: 6px 0 0 20px;
+    }
+
+    #page2 .box label {
+        display: none;
+    }
+}
+
+/*杨康 第二屏css样式结束*/
