@@ -251,7 +251,7 @@ html,body{
     width: 300px;
     float: left;
     height: 20px;
-    margin: 0!important;
+    margin: 0;
     overflow: hidden;
 }
 .NewsAll{
@@ -312,7 +312,7 @@ html,body{
         width: 74px;
         height: 139px;
         float: left;
-        background:url(../img/words_mini.png)no-repeat top right;
+        background: url(../image/words_mini.png) no-repeat top right;
     }
     .box1Right{
         width: auto;
@@ -384,6 +384,7 @@ html,body{
     .numTel>span{
         display: none;
     }
+
 }
 @media screen and (max-width: 464px) {
     .box1Main{
@@ -468,6 +469,38 @@ html,body{
     }
     .RightIconsMain{
         display: none;
+    }
+
+    .newsTitle, .newsMore {
+        display: none;
+    }
+
+    .NewsBox {
+        margin: 0 auto;
+        float: none;
+    }
+
+    .newsMain {
+        margin-top: 30px;
+    }
+
+    .newsMain > ul {
+        margin: 0;
+    }
+
+    .newTop {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .newsMain {
+        width: 110px;
+        transition: width 0.5s;
+    }
+
+    .LunboBtn {
+        width: 20% !important;
     }
 }
 

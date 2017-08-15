@@ -100,7 +100,6 @@
 
 			}
 		}
-
 		//赵佳佳 第一屏轮播
 		NumOneLunbo();
 		function NumOneLunbo(){
@@ -188,12 +187,33 @@
 			}
 			hoverBtn();
 		}
+
+		//赵佳佳 新闻上下滚动
+		news();
+		function news() {
+			// 第一屏新闻上下滚动
+			var NewsAll = document.getElementsByClassName("NewsAll")[0];
+			var index = 0;
+
+			function News() {
+				NewsAll.style.marginTop = "";
+				if (index >= 4) {
+					index = 0;
+				} else {
+					index++;
+				}
+				NewsAll.style.marginTop = -20 * index + "px";
+			}
+
+			setInterval(News, 1000);
+		}
 		//改变屏幕大小
 		window.onresize=function() {
+			var cw = document.body.clientWidth;
 			var homepageLunbo = document.getElementsByClassName("homepageLunbo");
+			bgBox.style.width = cw * (homepageLunbo.length) + "px";
 			for (var i = 0; i < homepageLunbo.length; i++) {
 				homepageLunbo[i].style.width = window.innerWidth + "px";
-
 			}
 		}
 	}
