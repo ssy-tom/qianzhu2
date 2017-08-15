@@ -797,6 +797,165 @@ html,body{
 }
 
 /*杨康 第二屏css样式结束*/
+/*李丹 第六屏css 开始 */
+.six {
+    background: url(../image/wp6.jpg) 50% 45%;
+}
+
+.box6_font {
+    text-align: center;
+    /*display: none;*/
+    width: 100%;
+    height: 91px;
+    position: absolute;
+    left: 0px;
+    top: 125px;
+    text-align: center;
+    font-size: 24px;
+    font-family: "微软雅黑", Arial;
+    color: #333;
+}
+
+.box6_font > i {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 37px;
+    background: url(../image/words.png) no-repeat right -576px;
+}
+
+.six_box {
+    width: 100%;
+    height: 234px;
+    position: absolute;
+    left: 0px;
+    top: 245px;
+}
+
+.six_box > ul {
+    width: 1090px;
+    height: 234px;
+    margin: 0 auto;
+    font-family: "微软雅黑", Arial;
+    color: #333;
+}
+
+.six_box > ul > li {
+    width: 128px;
+    padding: 0px 5px;
+    margin: 0px 20px;
+    height: 234px;
+    float: left;
+    position: relative;
+}
+
+.cls {
+    display: block;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    background: url(../image/words.png) no-repeat 0px -624px;
+    -webkit-transition: all .5s ease-in-out 0s;
+    -moz-transition: all .5s ease-in-out 0s;
+    -ms-transition: all .5s ease-in-out 0s;
+    -o-transition: all .5s ease-in-out 0s;
+    transition: all .5s ease-in-out 0s;
+    clip: rect(0px, 128px, -10px, 64px);
+}
+
+.crs {
+    display: block;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    background: url(../image/words.png) no-repeat 0px -624px;
+    -webkit-transition: all .5s ease-in-out 0s;
+    -moz-transition: all .5s ease-in-out 0s;
+    -ms-transition: all .5s ease-in-out 0s;
+    -o-transition: all .5s ease-in-out 0s;
+    transition: all .5s ease-in-out 0s;
+    clip: rect(128px, 64px, 128px, 0px);
+}
+
+.six_box > ul > li:hover .cls {
+    clip: rect(0px, 128px, 128px, 64px);
+}
+
+.six_box > ul > li:hover .crs {
+    clip: rect(0px, 64px, 128px, 0px);
+}
+
+.six_box > ul > li > i {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 28px;
+    height: 70px;
+}
+
+.six_li1 > i {
+    background: url(../image/words.png) no-repeat -144px -632px;
+    width: 54px;
+}
+
+.six_li2 > i {
+    background: url(../image/words.png) no-repeat -207px -630px;
+    width: 74px;
+}
+
+.six_li3 > i {
+    background: url(../image/words.png) no-repeat -288px -630px;
+    width: 68px;
+}
+
+.six_li4 > i {
+    background: url(../image/words.png) no-repeat -366px -628px;
+    width: 62px;
+}
+
+.six_li5 > i {
+    background: url(../image/words.png) no-repeat -438px -639px;
+    width: 56px;
+}
+
+.six_li6 > i {
+    background: url(../image/words.png) no-repeat -144px -705px;
+    width: 52px;
+}
+
+.six_move {
+    width: 100%;
+    height: 132px;
+    position: absolute;
+    left: 0px;
+    /*bottom:-200px;*/
+}
+
+.six_move > strong {
+    display: block;
+    margin: 50px 0px 10px 0px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.six_move > p {
+    display: block;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 14px;
+
+}
+
+@media (max-width: 996px) {
+    #page2 .box .main_content {
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/*李丹 第六屏css 结束 */
 
 /*/王侃 第七屏幕CSS 开始/*/
 #page7 {
