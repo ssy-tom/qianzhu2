@@ -19,7 +19,7 @@ html,body{
 .page{
 	width: 100%;
       height: 100%;
-      background: red;
+      /*background: red;*/
       font-size: 60px;
       color: #fff;
       text-align: center;
@@ -45,4 +45,430 @@ html,body{
       border-radius: 50%;
       background: #000;
       transition: all .5s ease;
+}
+/*第一张 赵佳佳*/
+#page1{
+    position: relative;
+}
+.homepageLunbo{
+    float: left;
+    height: 100%;
+    /*transition:all 0.5s;*/
+}
+.boxOne{
+    position: relative;
+}
+#bgBox{
+    height: 100%;
+    position: absolute;
+    margin: 0!important;
+    top: 0;
+    left: 0;
+}
+.homepageLunbo{
+    height: 100%;
+}
+.homepageLunbo1{
+    background: url(../image/wp1_1.jpg)50% center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.box1One{
+    width: 100%;
+    height: 231px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin:auto;
+}
+.box1Main{
+    margin:0 auto;
+    width: 562px;
+    height: 662px;
+}
+.box1Left{
+    width: 123px;
+    height: 231px;
+    float: left;
+    background: url(../image/words.png)no-repeat top right;
+}
+.box1Right{
+    margin-top: 30px;
+    float: left;
+    margin-left: 20px;
+}
+.box1Right>span,
+.box2>span{
+    display: block;
+    color: #fff;
+    font-size: 36px;
+    line-height: 30px;
+}
+.box2>span,
+.box2>p{
+    text-align: right;
+}
+.box1Right>div{
+    width: 339px;
+    height: 66px;
+    margin: 10px 0px 5px 0px;
+    background: url(../image/words.png) no-repeat;
+}
+.box1Right>p,
+.box2>p,
+.box3>p,
+.box4>p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #ccc;
+}
+.box3>p,.box4>p{
+    text-align: center;
+}
+.homepageLunbo2{
+    background: url(../image/wp1_2.jpg)50% center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.box2Main{
+    width: 100%;
+    height: 162px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.box2{
+    width: 325px;
+    height: 100%;
+    margin: 0 20%;
+
+}
+.shejikongImg{
+    width: 320px;
+    height: 65px;
+    margin: 10px 0px 8px 0px;
+    background: url(../image/words.png) no-repeat 0px -72px;
+}
+.share{
+    width: 50%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.homepageLunbo3{
+    background: url(../image/wp1_3.jpg)50% center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.box3Main{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.box3{
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+}
+.box3>span,
+.box4>span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    line-height: 30px;
+}
+.jishupaiImg{
+    width: 358px;
+    height: 66px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: url(../image/words.png) no-repeat 0px -219px;
+}
+
+.homepageLunbo4{
+    background: url(../image/wp1_4.jpg)50% top no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.box4Main{
+    width: 100%;
+    height: 172px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.box4{
+    width: 345px;
+    /*margin-top: 164px;*/
+    height: auto;
+    margin: 0 auto;
+}
+.box4>p>span{
+    color: #00dfb9;
+}
+.bujuImg{
+    width: 242px;
+    height: 64px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background: url(../image/words.png) no-repeat 0px -147px;
+}
+.news{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    /*background: red;*/
+}
+.newTop{
+    width: 405px;
+    height: auto;
+    margin: 0 auto
+}
+.newsTitle{
+    float: left;
+    margin: 1px 15px 0px 0px;
+    color: #00dfb9;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 16px;
+}
+.NewsBox{
+    width: 300px;
+    float: left;
+    height: 20px;
+    margin: 0!important;
+    overflow: hidden;
+}
+.NewsAll{
+    width: 100%;
+    height: 100px;
+    transition:all 0.5s;
+}
+.NewsAll>li{
+    width: 100%;
+    height: 20px;
+    color: #ddd;
+    font-size: 14px;
+    line-height: 20px;
+}
+.newsMain{
+    width: 192px;
+    height: 3px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.newsMain>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+.newsMain>ul>li{
+    float: left;
+    width:22%;
+    height: 100%;
+    float: left;
+    background: #fff;
+}
+.newsMore{
+    border-bottom: 1px dotted #00dfb9;
+    color: #00dfb9;
+    font-size: 14px;
+    display: inline-block;
+    float: right;
+    line-height: 20px;
+}
+.btnOne{
+    width: 47px;
+    height: 47px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: url(../image/icons.png) no-repeat 0px -60px;
+}
+.btnOne:hover{
+    background: url(../image/icons.png)no-repeat 0px -112px;
+}
+@media screen and (min-width: 465px) and (max-width: 660px){
+    .box1Main{
+        width: 297px;
+        height: 145px;
+    }
+    .box1Left{
+        width: 74px;
+        height: 139px;
+        float: left;
+        background:url(../img/words_mini.png)no-repeat top right;
+    }
+    .box1Right{
+        width: auto;
+        height: auto;
+        float: left;
+    }
+    .box1Right>span{
+        font-size: 24px;
+    }
+    .box1Right>div{
+        background: url(../image/words_mini.png) no-repeat;
+        width: 203px;
+        height: 40px;
+        margin: 3px 0px 5px 0px;
+    }
+    .box1Right>p{
+        font-size: 12px;
+        font-family: "宋体";
+        line-height: 20px;
+    }
+    .box2{
+        width: 200px;
+        height: 100%;
+        margin: 0 auto;
+
+    }
+    .box2>span{
+        font-size: 24px;
+        text-align: center;
+    }
+    .shejikongImg{
+        width: 191px;
+        height: 40px;
+        margin: 8px auto;
+        background: url(../image/words_mini.png) no-repeat 0px -45px;
+    }
+    .box2>p,
+    .box3>p,
+    .box4>p{
+        font-size: 12px;
+        font-family: "宋体";
+        line-height: 20px;
+        text-align: center;
+    }
+    .box3{
+        width: 245px;
+        height: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+    .box3>span,
+    .box4>span{
+        font-size: 24px;
+    }
+    .jishupaiImg{
+        width: 216px;
+        height: 40px;
+        margin-top: 10px;
+        background: url(../image/words_mini.png) no-repeat 0px -131px;
+    }
+    .bujuImg{
+        width: 143px;
+        height: 38px;
+        background: url(../image/words_mini.png) no-repeat 0px -88px;
+    }
+    .numTel>span{
+        display: none;
+    }
+}
+@media screen and (max-width: 464px) {
+    .box1Main{
+        width: 297px;
+        height: 145px;
+    }
+    .box1Left{
+        width: 74px;
+        height: 139px;
+        float: left;
+        background:url(../image/words_mini.png)no-repeat top right;
+    }
+    .box1Right{
+        width: auto;
+        height: auto;
+        float: left;
+    }
+    .box1Right>span{
+        font-size: 24px;
+    }
+    .box1Right>div{
+        background: url(../image/words_mini.png) no-repeat;
+        width: 203px;
+        height: 40px;
+        margin: 3px 0px 5px 0px;
+    }
+    .box1Right>p{
+        font-size: 12px;
+        font-family: "宋体";
+        line-height: 20px;
+    }
+    .box2{
+        width: 200px;
+        height: 100%;
+        margin: 0 auto;
+
+    }
+    .box2>span{
+        font-size: 24px;
+        text-align: center;
+    }
+    .shejikongImg{
+        width: 191px;
+        height: 40px;
+        margin: 8px auto;
+        background: url(../image/words_mini.png) no-repeat 0px -45px;
+    }
+    .box2>p,
+    .box3>p,
+    .box4>p{
+        font-size: 12px;
+        font-family: "宋体";
+        line-height: 20px;
+        text-align: center;
+    }
+    .box3{
+        width: 245px;
+        height: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+    .box3>span,
+    .box4>span{
+        font-size: 24px;
+    }
+    .jishupaiImg{
+        width: 216px;
+        height: 40px;
+        margin-top: 10px;
+        background: url(../image/words_mini.png) no-repeat 0px -131px;
+    }
+    .bujuImg{
+        width: 143px;
+        height: 38px;
+        background: url(../image/words_mini.png) no-repeat 0px -88px;
+    }
+    .numTel>span{
+        display: none;
+    }
+    .RightIconsMain{
+        display: none;
+    }
 }
