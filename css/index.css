@@ -990,6 +990,7 @@ html,body{
     display:inline-block;
     font-size:13px;
     line-height: 26px;
+    text-align:left;
 }
 .in8-z>a{
     margin-left: 20px;
@@ -1003,6 +1004,7 @@ html,body{
     color: #666;
     line-height: 26px;
     font-size: 13px;
+    text-align:left;
 }
 .in8-2{
     margin:0 auto;
