@@ -41,6 +41,10 @@
 							return ;
 						}
 						this.StyleBack();
+						if(this.num==6&&document.body.clientWidth>1440){
+                            document.getElementsByClassName('seven_font')[0].style.animationPlayState="running"
+                            document.getElementsByClassName('box7_bottom')[0].style.animationPlayState="running"
+						}
 					}else{
 						if (this.num > 0) {
 							this.num --;

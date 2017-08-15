@@ -810,6 +810,7 @@ html,body{
     height:126px;
 }
 .option>li{
+    position: relative;
     width:80px;
     height:42px;
     line-height: 42px;
@@ -821,6 +822,11 @@ html,body{
     font-family: "微软雅黑",Arial;
     z-index: 3;
     background:rgba(47,208,181,0.2);
+    transition: all .2s;
+}
+.option>li:hover{
+    color: white;
+    opacity: 1;
 }
 #bg{
     position: absolute;
@@ -832,13 +838,33 @@ html,body{
     z-index: 1;
     transition: all .3s;
 }
+@keyframes se_ft {
+    0%{
+        left:-500px;
+    }
+    100%{
+        left:1050px;
+    }
+}
+@keyframes se_bot {
+    0%{
+        height:0px;
+    }
+    100%{
+        height:81px;
+    }
+}
 .seven_font{
     position: relative;
     width:490px;
     height:240px;
     top:255px;
-    left:1050px;
+    /*left:1050px;*/
+    left: -500px;
     overflow: hidden;
+    animation: se_ft .5s  .3s 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 .option_box{
     position: relative;
@@ -925,6 +951,10 @@ html,body{
     bottom:0px;
     line-height: 70px;
     background:rgba(255,251,240,0.2);
+    overflow: hidden;
+    animation: se_bot .5s  .3s 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 .box7_bottom>div{
     float:left;
@@ -960,7 +990,7 @@ html,body{
         width: 80px;
     }
 }
-/*/王侃 第七屏幕CSS 结束/*/
+/*/王侃 第七屏CSS 结束/*/
 
 
 /*百艺伟第八屏样式开始*/
