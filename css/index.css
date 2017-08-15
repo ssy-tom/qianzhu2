@@ -384,7 +384,6 @@ html,body{
     .numTel>span{
         display: none;
     }
-
 }
 @media screen and (max-width: 464px) {
     .box1Main{
@@ -483,7 +482,6 @@ html,body{
     .newsMain {
         margin-top: 30px;
     }
-
     .newsMain > ul {
         margin: 0;
     }
@@ -492,7 +490,6 @@ html,body{
         width: 100%;
     }
 }
-
 @media screen and (max-width: 360px) {
     .newsMain {
         width: 110px;
@@ -503,7 +500,6 @@ html,body{
         width: 20% !important;
     }
 }
-
 /*杨康 第二屏css样式开始*/
 #page2 {
     position: relative;
