@@ -798,67 +798,65 @@ html,body{
 
 /*杨康 第二屏css样式结束*/
 
-/*/王侃 第七屏幕CSS 开始/*/
-#page7 {
+/*/王侃 第七屏CSS 开始/*/
+#page7{
     background: url(../image/wp7.jpg) no-repeat 50% 60%;
 }
-
-.option {
+.option{
     position: relative;
-    left: 50px;
-    top: 150px;
-    width: 80px;
-    height: 126px;
-    background: rgba(47, 208, 181, 0.2);
+    left:50px;
+    top:150px;
+    width:80px;
+    height:126px;
 }
-
-.option > li {
-    width: 80px;
-    height: 42px;
+.option>li{
+    width:80px;
+    height:42px;
     line-height: 42px;
     color: #888;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
-    float: left;
-    font-family: "微软雅黑", Arial;
+    float:left;
+    font-family: "微软雅黑",Arial;
+    z-index: 3;
+    background:rgba(47,208,181,0.2);
 }
-
-#bg {
-    width: 80px;
-    height: 42px;
+#bg{
     position: absolute;
-    top: 0px;
-    left: 0px;
-    background: rgba(47, 208, 181, 0.15);
-    z-index: -1;
+    top:0px;
+    left:0px;
+    width:80px;
+    height:42px;
+    background:rgba(47,208,181,0.5);
+    z-index: 1;
+    transition: all .3s;
 }
-
-.seven_font {
+.seven_font{
     position: relative;
-    width: 480px;
-    height: 240px;
-    top: 255px;
-    left: 950px;
+    width:490px;
+    height:240px;
+    top:255px;
+    left:1050px;
     overflow: hidden;
 }
-
-.option_box {
+.option_box{
     position: relative;
-    width: 1920px;
-    height: 240px;
+    left:0px;
+    transform:translateX(-480px);
+    width:1920px;
+    height:240px;
+    transition: all .3s;
 }
-
-.option_box > li {
-    top: 0;
-    left: 0;
-    width: 480px;
-    height: 240px;
-    float: left;
-    font-family: "微软雅黑", Arial;
+.option_box>li{
+    width: 490px;
+    height:240px;
+    float:left;
+    text-align: left;
+    font-family: "微软雅黑",Arial;
+    transition: all .3s;
 }
-
-.option_li1 > strong {
+.option_li1>strong{
     display: block;
     height: 50px;
     line-height: 50px;
@@ -866,88 +864,103 @@ html,body{
     font-size: 40px;
     font-weight: normal;
     letter-spacing: 5px;
+    margin-bottom: 5px;
 }
-
-.option_box > li > p {
-    margin-top: 20px;
+.option_box>li>p{
+    display: block;
+    text-align: left;
+    width: 460px;
     color: #999;
     line-height: 35px;
     font-size: 14px;
 }
-
-.option_li1 > u {
+.option_li1>u{
     display: block;
     margin-top: 20px;
     color: #999;
     font-size: 24px;
     text-decoration: none;
 }
-
-.option_li2 > strong {
+.option_li2>strong{
+    margin-bottom: 10px;
     display: block;
     color: #00dfb9;
     font-size: 22px;
     font-weight: normal;
     text-indent: 28px;
 }
-
-.option_li2 > p {
+.option_li2>p{
     text-indent: 28px;
 }
-
-.option_li3 > strong {
+.option_li3>strong{
+    padding-left: 30px;
     display: block;
     margin-bottom: 20px;
     color: #00dfb9;
     font-size: 22px;
     font-weight: normal;
 }
-
-.option_li3 > ul > li {
-    width: 100%;
+.option_li3>ul>li{
+    width:100%;
     color: #999;
     line-height: 35px;
     padding-left: 30px;
     list-style: none;
-    font-family: "微软雅黑", Arial;
+    font-family: "微软雅黑",Arial;
     background: url(../image/point.png) no-repeat 0px 13px;
     font-size: 14px;
 }
-
-.option_li3 > ul > li > u {
+.option_li3>ul>li>u{
     margin: 0 15px;
     text-decoration: none;
 }
-
-.box7_bottom {
-    width: 100%;
-    height: 71px;
+.box7_bottom{
+    width:100%;
+    height:71px;
     color: #bbb;
     text-align: center;
-    font-family: "微软雅黑", Arial;
+    font-family: "微软雅黑",Arial;
     font-size: 14px;
     position: absolute;
-    bottom: 0px;
+    bottom:0px;
     line-height: 70px;
-    background: rgba(255, 251, 240, 0.2);
+    background:rgba(255,251,240,0.2);
 }
-
-.box7_bottom > div {
-    float: left;
-    width: 20%;
-    height: 70px;
+.box7_bottom>div{
+    float:left;
+    width:20%;
+    height:70px;
     vertical-align: inherit;
 }
-
-.box7_bottom > div > u {
+.box7_bottom>div>u{
     margin-right: 10px;
     color: #00dfb9;
     font-family: Arial;
     font-size: 26px;
     text-decoration: none;
 }
-
-/*/王侃 第七屏幕CSS 结/*/
+@media screen and (max-width: 1440px){
+    .seven_font{
+        left:30%;
+    }
+}
+@media screen and (max-width: 720px) {
+    .seven_font{
+        left:5%;
+        transform: scale(0.9);
+    }
+    .option{
+        top:20%;
+        left: 20%;
+        width: 240px;
+    }
+    .option li{
+        position: static;
+        float: left;
+        width: 80px;
+    }
+}
+/*/王侃 第七屏幕CSS 结束/*/
 
 
 /*百艺伟第八屏样式开始*/
