@@ -776,7 +776,7 @@ html,body{
 
 
 
-/*/王侃 第七屏幕CSS 开始/*/
+/*/王侃 第七屏CSS 开始/*/
 #page7{
     background: url(../image/wp7.jpg) no-repeat 50% 60%;
 }
@@ -786,7 +786,6 @@ html,body{
     top:150px;
     width:80px;
     height:126px;
-    background:rgba(47,208,181,0.2);
 }
 .option>li{
     width:80px;
@@ -798,36 +797,42 @@ html,body{
     cursor: pointer;
     float:left;
     font-family: "微软雅黑",Arial;
+    z-index: 3;
+    background:rgba(47,208,181,0.2);
 }
 #bg{
-    width:80px;
-    height:42px;
     position: absolute;
     top:0px;
     left:0px;
-    background:rgba(47,208,181,0.15);
-    z-index: -1;
+    width:80px;
+    height:42px;
+    background:rgba(47,208,181,0.5);
+    z-index: 1;
+    transition: all .3s;
 }
 .seven_font{
     position: relative;
-    width:480px;
+    width:490px;
     height:240px;
     top:255px;
-    left:950px;
+    left:1050px;
     overflow: hidden;
 }
 .option_box{
     position: relative;
+    left:0px;
+    transform:translateX(-480px);
     width:1920px;
     height:240px;
+    transition: all .3s;
 }
 .option_box>li{
-    top:0;
-    left: 0;
-    width:480px;
+    width: 490px;
     height:240px;
     float:left;
+    text-align: left;
     font-family: "微软雅黑",Arial;
+    transition: all .3s;
 }
 .option_li1>strong{
     display: block;
@@ -837,9 +842,12 @@ html,body{
     font-size: 40px;
     font-weight: normal;
     letter-spacing: 5px;
+    margin-bottom: 5px;
 }
 .option_box>li>p{
-    margin-top: 20px;
+    display: block;
+    text-align: left;
+    width: 460px;
     color: #999;
     line-height: 35px;
     font-size: 14px;
@@ -852,6 +860,7 @@ html,body{
     text-decoration: none;
 }
 .option_li2>strong{
+    margin-bottom: 10px;
     display: block;
     color: #00dfb9;
     font-size: 22px;
@@ -862,6 +871,7 @@ html,body{
     text-indent: 28px;
 }
 .option_li3>strong{
+    padding-left: 30px;
     display: block;
     margin-bottom: 20px;
     color: #00dfb9;
@@ -906,5 +916,26 @@ html,body{
     font-family: Arial;
     font-size: 26px;
     text-decoration: none;
+}
+@media screen and (max-width: 1440px){
+    .seven_font{
+        left:30%;
+    }
+}
+@media screen and (max-width: 720px) {
+    .seven_font{
+        left:5%;
+        transform: scale(0.9);
+    }
+    .option{
+        top:20%;
+        left: 20%;
+        width: 240px;
+    }
+    .option li{
+        position: static;
+        float: left;
+        width: 80px;
+    }
 }
 /*/王侃 第七屏幕CSS 结束/*/

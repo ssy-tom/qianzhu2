@@ -37,6 +37,9 @@
 						if (this.num < this.boxs.length-1) {
 							this.num ++;
 							this.start();
+							if(this.num==6){
+
+							}
 						}else{
 							return ;
 						}
@@ -188,9 +191,56 @@
 			}
 			hoverBtn();
 		}
+		// 王侃  第七屏选项卡
+		seven_option()
+		function seven_option() {
+			let opt_box = document.getElementsByClassName('option_box')[0];
+			let opt_ulbg = document.getElementById('bg');
+			let sev_lish = document.getElementsByClassName("option_li1")[0].offsetWidth;
+
+            if(document.body.clientWidth<720){
+                document.getElementsByClassName('option_1')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX(0)'
+                    opt_ulbg.style.transform = 'translateX(0)'
+                }
+                document.getElementsByClassName('option_2')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX('+ -sev_lish +'px )';
+                    opt_ulbg.style.transform = 'translateX(80px)'
+
+                }
+                document.getElementsByClassName('option_3')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX('+ -sev_lish*2 +'px )'
+                    opt_ulbg.style.transform = 'translateX(160px)'
+                }
+			}else {
+                document.getElementsByClassName('option_1')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX(0)'
+                    opt_ulbg.style.transform = 'translatey(0)'
+                }
+                document.getElementsByClassName('option_2')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX('+ -sev_lish +'px )';
+                    opt_ulbg.style.transform = 'translatey(42px)'
+
+                }
+                document.getElementsByClassName('option_3')[0].onmouseover=function () {
+                    opt_box.style.transform = 'translateX('+ -sev_lish*2 +'px )'
+                    opt_ulbg.style.transform = 'translatey(84px)'
+                }
+			}
+
+        }
+
+
+
+
+
+
+
 		//改变屏幕大小
 		window.onresize=function() {
-			var homepageLunbo = document.getElementsByClassName("homepageLunbo");
+            seven_option()
+			// deemo9562
+            var homepageLunbo = document.getElementsByClassName("homepageLunbo");
 			for (var i = 0; i < homepageLunbo.length; i++) {
 				homepageLunbo[i].style.width = window.innerWidth + "px";
 
