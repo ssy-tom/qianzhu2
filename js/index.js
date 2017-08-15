@@ -252,8 +252,6 @@
 
 
 
-
-
 		//改变屏幕大小
 		window.onresize=function() {
             seven_option()
@@ -265,5 +263,19 @@
 				homepageLunbo[i].style.width = window.innerWidth + "px";
 			}
 		}
-	}
-})(window)
+	};
+	/*李威第三屏*/
+    var slideUP=$('.shade_up').innerHeight();
+    var slideDown=$('.shade_dowm').innerHeight();
+    $(".box_shade").each(function(index){
+        $('.box_shade').eq(index).hover(function(){
+            $(this).find('.shade_dowm').stop(true).animate({bottom:'0px'},300);
+            $(this).find('.shade_up').stop(true).animate({top:'0px'},300);
+        },function(){
+            $(this).find('.shade_dowm').stop(true).animate({bottom:-slideDown+'px'},300);
+            $(this).find('.shade_up').stop(true).animate({top:-slideUP+'px'},300);
+            $(this).find('.shade_content>p').css({color:'#999999'})
+        });
+    });
+
+})(window);

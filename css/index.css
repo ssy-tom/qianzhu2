@@ -1076,3 +1076,189 @@ html,body{
 }
 
 /*百艺伟第八屏样式结束*/
+
+
+
+/*李威第第三屏开始*/
+
+.cases .box {
+    transition: all .3s ease-in-out 0s;
+    border: 1px  solid rgba(0,0,0,0);
+}
+.cases .box .caption {
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    transition: all .5s ease-in-out 0s;
+}
+.cases .box .caption i {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: 129px;
+    height: 37px;
+    background: url(../image/words.png) no-repeat 0px -528px;
+}
+.cases .box .caption span {
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding-left: 10px;
+}
+.clear {
+    clear: both;
+}
+#cases_box{
+    margin: 0 auto;
+    top: 700px;
+    width: 1080px;
+    height:302px;
+    margin-top: 60px;
+}
+.shade_content{
+    width: 320px;
+    height: 300px;
+    position: absolute;
+    background-color: #fff;
+
+}
+
+.shade_content img{
+    width: 320px;
+    height: 200px;
+    border:none;
+}
+.box_shade{
+    float: left;
+    width: 320px;
+    height: 300px;
+    border-bottom:1.5px solid #2FD0B5;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+}
+.shade_content p {
+    position: absolute;
+    margin: 0px 88px;
+    color:#999999;
+    font-family: Arial,"宋体";
+    font-size: 12px;
+    line-height: 26px;
+}
+.shade_content p strong{
+    color:#222;
+    font-weight: normal;
+}
+.shade_up{
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    top:-200px;
+    background-color: black;
+    opacity: 0.5;
+
+}
+.shade_dowm{
+    position: absolute;
+    width: 320px;
+    height: 100px;
+    background-color: #2FD0B5;
+    bottom: -100px;
+}
+.shade_up u{
+    display: block;
+    margin: 0 auto;
+    margin-top: 78px;
+    width: 44px;
+    height: 44px;
+    background: url(../image/icons.png) no-repeat 0px -168px;
+}
+
+.shade_dowm p {
+    position: absolute;
+    margin: 0px 88px;
+    color: #fff;
+    font-family: Arial,"宋体";
+    font-size: 12px;
+    line-height: 26px;
+    text-indent: 2rem;
+
+}
+.shade_dowm p strong{
+    font-weight: normal;
+}
+.slide_btn{
+    margin-top: 50px;
+    width: 200px;
+    margin: 20px auto;
+}
+a.more {
+    top: 700px;
+    width: 200px;
+    padding:15px 5px 15px 5px;;
+    color: #00dfb9;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px dotted #00dfb9;
+    transition: all .3s ease-in-out 0s,top .8s ease-in-out 0s;
+    display: inline-block;
+}
+a.more:hover{
+    background-color: #0EE1BD;
+    color: #fff;
+    transition: all .5s ease-in-out;
+}
+
+
+@media (max-width: 1150px){
+
+    .cases .box #cases_box {
+        width: 840px;
+    }
+
+}
+
+.cases .box #cases_box {
+    margin: 0 auto;
+    margin-top: 60px;
+    top: 700px;
+    width: 1080px;
+    transition: all .8s ease-in-out 0s;
+}
+
+.inner_box {
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1150px){
+    .cases .box #cases_box {
+        width: 840px;
+    }
+    .cases .box #cases_box .box_shade{
+        width: 260px;
+        height: 235px;
+    }
+    .cases .box #cases_box .box_shade .shade_content{
+        width: 260px;
+    }
+    .cases .box #cases_box .box_shade .shade_up {
+        width: 260px;
+        height: 153px;
+    }
+    .cases .box #cases_box .box_shade .shade_up u {
+        margin-top: 54px;
+    }
+    .cases .box #cases_box .box_shade img {
+        width: 260px;
+        height: 153px;
+    }
+    .cases .box #cases_box .box_shade .shade_dowm {
+        width: 260px;
+        height: 100px;
+        bottom: -100px;
+    }
+}
+/*李威第第三屏结束*/
