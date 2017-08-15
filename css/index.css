@@ -744,7 +744,7 @@ html,body{
     }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
     #page2 .box .main_content {
         width: 930px;
         margin: 40px auto 0;
