@@ -957,67 +957,65 @@ html,body{
 
 /*李丹 第六屏css 结束 */
 
-/*/王侃 第七屏幕CSS 开始/*/
-#page7 {
+/*/王侃 第七屏CSS 开始/*/
+#page7{
     background: url(../image/wp7.jpg) no-repeat 50% 60%;
 }
-
-.option {
+.option{
     position: relative;
-    left: 50px;
-    top: 150px;
-    width: 80px;
-    height: 126px;
-    background: rgba(47, 208, 181, 0.2);
+    left:50px;
+    top:150px;
+    width:80px;
+    height:126px;
 }
-
-.option > li {
-    width: 80px;
-    height: 42px;
+.option>li{
+    width:80px;
+    height:42px;
     line-height: 42px;
     color: #888;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
-    float: left;
-    font-family: "微软雅黑", Arial;
+    float:left;
+    font-family: "微软雅黑",Arial;
+    z-index: 3;
+    background:rgba(47,208,181,0.2);
 }
-
-#bg {
-    width: 80px;
-    height: 42px;
+#bg{
     position: absolute;
-    top: 0px;
-    left: 0px;
-    background: rgba(47, 208, 181, 0.15);
-    z-index: -1;
+    top:0px;
+    left:0px;
+    width:80px;
+    height:42px;
+    background:rgba(47,208,181,0.5);
+    z-index: 1;
+    transition: all .3s;
 }
-
-.seven_font {
+.seven_font{
     position: relative;
-    width: 480px;
-    height: 240px;
-    top: 255px;
-    left: 950px;
+    width:490px;
+    height:240px;
+    top:255px;
+    left:1050px;
     overflow: hidden;
 }
-
-.option_box {
+.option_box{
     position: relative;
-    width: 1920px;
-    height: 240px;
+    left:0px;
+    transform:translateX(-480px);
+    width:1920px;
+    height:240px;
+    transition: all .3s;
 }
-
-.option_box > li {
-    top: 0;
-    left: 0;
-    width: 480px;
-    height: 240px;
-    float: left;
-    font-family: "微软雅黑", Arial;
+.option_box>li{
+    width: 490px;
+    height:240px;
+    float:left;
+    text-align: left;
+    font-family: "微软雅黑",Arial;
+    transition: all .3s;
 }
-
-.option_li1 > strong {
+.option_li1>strong{
     display: block;
     height: 50px;
     line-height: 50px;
@@ -1025,87 +1023,102 @@ html,body{
     font-size: 40px;
     font-weight: normal;
     letter-spacing: 5px;
+    margin-bottom: 5px;
 }
-
-.option_box > li > p {
-    margin-top: 20px;
+.option_box>li>p{
+    display: block;
+    text-align: left;
+    width: 460px;
     color: #999;
     line-height: 35px;
     font-size: 14px;
 }
-
-.option_li1 > u {
+.option_li1>u{
     display: block;
     margin-top: 20px;
     color: #999;
     font-size: 24px;
     text-decoration: none;
 }
-
-.option_li2 > strong {
+.option_li2>strong{
+    margin-bottom: 10px;
     display: block;
     color: #00dfb9;
     font-size: 22px;
     font-weight: normal;
     text-indent: 28px;
 }
-
-.option_li2 > p {
+.option_li2>p{
     text-indent: 28px;
 }
-
-.option_li3 > strong {
+.option_li3>strong{
+    padding-left: 30px;
     display: block;
     margin-bottom: 20px;
     color: #00dfb9;
     font-size: 22px;
     font-weight: normal;
 }
-
-.option_li3 > ul > li {
-    width: 100%;
+.option_li3>ul>li{
+    width:100%;
     color: #999;
     line-height: 35px;
     padding-left: 30px;
     list-style: none;
-    font-family: "微软雅黑", Arial;
+    font-family: "微软雅黑",Arial;
     background: url(../image/point.png) no-repeat 0px 13px;
     font-size: 14px;
 }
-
-.option_li3 > ul > li > u {
+.option_li3>ul>li>u{
     margin: 0 15px;
     text-decoration: none;
 }
-
-.box7_bottom {
-    width: 100%;
-    height: 71px;
+.box7_bottom{
+    width:100%;
+    height:71px;
     color: #bbb;
     text-align: center;
-    font-family: "微软雅黑", Arial;
+    font-family: "微软雅黑",Arial;
     font-size: 14px;
     position: absolute;
-    bottom: 0px;
+    bottom:0px;
     line-height: 70px;
-    background: rgba(255, 251, 240, 0.2);
+    background:rgba(255,251,240,0.2);
 }
-
-.box7_bottom > div {
-    float: left;
-    width: 20%;
-    height: 70px;
+.box7_bottom>div{
+    float:left;
+    width:20%;
+    height:70px;
     vertical-align: inherit;
 }
-
-.box7_bottom > div > u {
+.box7_bottom>div>u{
     margin-right: 10px;
     color: #00dfb9;
     font-family: Arial;
     font-size: 26px;
     text-decoration: none;
 }
-
+@media screen and (max-width: 1440px){
+    .seven_font{
+        left:30%;
+    }
+}
+@media screen and (max-width: 720px) {
+    .seven_font{
+        left:5%;
+        transform: scale(0.9);
+    }
+    .option{
+        top:20%;
+        left: 20%;
+        width: 240px;
+    }
+    .option li{
+        position: static;
+        float: left;
+        width: 80px;
+    }
+}
 /*/王侃 第七屏幕CSS 结束/*/
 
 
@@ -1149,6 +1162,7 @@ html,body{
     display:inline-block;
     font-size:13px;
     line-height: 26px;
+    text-align:left;
 }
 .in8-z>a{
     margin-left: 20px;
@@ -1162,6 +1176,7 @@ html,body{
     color: #666;
     line-height: 26px;
     font-size: 13px;
+    text-align:left;
 }
 .in8-2{
     margin:0 auto;
@@ -1222,3 +1237,189 @@ html,body{
 }
 
 /*百艺伟第八屏样式结束*/
+
+
+
+/*李威第第三屏开始*/
+
+.cases .box {
+    transition: all .3s ease-in-out 0s;
+    border: 1px  solid rgba(0,0,0,0);
+}
+.cases .box .caption {
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    transition: all .5s ease-in-out 0s;
+}
+.cases .box .caption i {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: 129px;
+    height: 37px;
+    background: url(../image/words.png) no-repeat 0px -528px;
+}
+.cases .box .caption span {
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding-left: 10px;
+}
+.clear {
+    clear: both;
+}
+#cases_box{
+    margin: 0 auto;
+    top: 700px;
+    width: 1080px;
+    height:302px;
+    margin-top: 60px;
+}
+.shade_content{
+    width: 320px;
+    height: 300px;
+    position: absolute;
+    background-color: #fff;
+
+}
+
+.shade_content img{
+    width: 320px;
+    height: 200px;
+    border:none;
+}
+.box_shade{
+    float: left;
+    width: 320px;
+    height: 300px;
+    border-bottom:1.5px solid #2FD0B5;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+}
+.shade_content p {
+    position: absolute;
+    margin: 0px 88px;
+    color:#999999;
+    font-family: Arial,"宋体";
+    font-size: 12px;
+    line-height: 26px;
+}
+.shade_content p strong{
+    color:#222;
+    font-weight: normal;
+}
+.shade_up{
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    top:-200px;
+    background-color: black;
+    opacity: 0.5;
+
+}
+.shade_dowm{
+    position: absolute;
+    width: 320px;
+    height: 100px;
+    background-color: #2FD0B5;
+    bottom: -100px;
+}
+.shade_up u{
+    display: block;
+    margin: 0 auto;
+    margin-top: 78px;
+    width: 44px;
+    height: 44px;
+    background: url(../image/icons.png) no-repeat 0px -168px;
+}
+
+.shade_dowm p {
+    position: absolute;
+    margin: 0px 88px;
+    color: #fff;
+    font-family: Arial,"宋体";
+    font-size: 12px;
+    line-height: 26px;
+    text-indent: 2rem;
+
+}
+.shade_dowm p strong{
+    font-weight: normal;
+}
+.slide_btn{
+    margin-top: 50px;
+    width: 200px;
+    margin: 20px auto;
+}
+a.more {
+    top: 700px;
+    width: 200px;
+    padding:15px 5px 15px 5px;;
+    color: #00dfb9;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px dotted #00dfb9;
+    transition: all .3s ease-in-out 0s,top .8s ease-in-out 0s;
+    display: inline-block;
+}
+a.more:hover{
+    background-color: #0EE1BD;
+    color: #fff;
+    transition: all .5s ease-in-out;
+}
+
+
+@media (max-width: 1150px){
+
+    .cases .box #cases_box {
+        width: 840px;
+    }
+
+}
+
+.cases .box #cases_box {
+    margin: 0 auto;
+    margin-top: 60px;
+    top: 700px;
+    width: 1080px;
+    transition: all .8s ease-in-out 0s;
+}
+
+.inner_box {
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1150px){
+    .cases .box #cases_box {
+        width: 840px;
+    }
+    .cases .box #cases_box .box_shade{
+        width: 260px;
+        height: 235px;
+    }
+    .cases .box #cases_box .box_shade .shade_content{
+        width: 260px;
+    }
+    .cases .box #cases_box .box_shade .shade_up {
+        width: 260px;
+        height: 153px;
+    }
+    .cases .box #cases_box .box_shade .shade_up u {
+        margin-top: 54px;
+    }
+    .cases .box #cases_box .box_shade img {
+        width: 260px;
+        height: 153px;
+    }
+    .cases .box #cases_box .box_shade .shade_dowm {
+        width: 260px;
+        height: 100px;
+        bottom: -100px;
+    }
+}
+/*李威第第三屏结束*/
