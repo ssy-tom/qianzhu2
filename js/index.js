@@ -79,9 +79,11 @@
 
 			}
 		}
+
 		//赵佳佳 第一屏轮播
-		NumOneLunbo();
-		function NumOneLunbo(){
+		Lunbo1();
+		function Lunbo1() {
+			// 第一屏轮播
 			var bgBox=document.getElementById("bgBox");
 			var homepageLunbo=document.getElementsByClassName("homepageLunbo");
 			var cw=document.body.clientWidth;
@@ -125,11 +127,12 @@
 				clearInterval(time);
 			}
 			moveLunBo2();
-			var LunboBtn=document.getElementsByClassName("LunboBtn");
+
+
 			function hoverBtn(){
 				for(var i=0;i<LunboBtn.length;i++){
 					LunboBtn[i].index=i;
-					LunboBtn[i].onmouseover=function(){
+					LunboBtn[i].onmouseover = function (e) {
 						clearLunBo2();
 						indexNum=LunBoNum;
 						furIndex=this.index;
@@ -140,8 +143,9 @@
 						LunboBtn[LunBoNum].style.background="#00DFB9";
 
 						var cha=furIndex-indexNum;
+
 						if (cha>0) {
-							animate(bgBox,{left:-cw},function(){
+							animate(bgBox, {left: Math.floor(-cw)}, function () {
 								var fir=bgBox.children[0];
 								bgBox.appendChild(fir);
 								bgBox.style.left=0;
@@ -151,7 +155,6 @@
 							var abs=Math.abs(cha);
 							bgBox.style.left=-cw*abs+"px";
 							for(var i=0;i<LunboBtn.length;i++){
-								// animate(bgBox,left:0,)
 								var fir2=getFirstChild(bgBox);
 								var last=getLastChild(bgBox);
 								bgBox.insertBefore(last,fir2);
@@ -160,31 +163,15 @@
 								indexNum=furIndex;
 							})
 						}
-						moveLunBo2()
+					}
+
+					LunboBtn[i].onmouseleave = function () {
+						bgBox.style.animation = "";
+						moveLunBo2();
 					}
 				}
 			}
 			hoverBtn();
-		}
-
-		//赵佳佳 新闻上下滚动
-		news();
-		function news() {
-			// 第一屏新闻上下滚动
-			var NewsAll = document.getElementsByClassName("NewsAll")[0];
-			var index = 0;
-
-			function News() {
-				NewsAll.style.marginTop = "";
-				if (index >= 4) {
-					index = 0;
-				} else {
-					index++;
-				}
-				NewsAll.style.marginTop = -20 * index + "px";
-			}
-
-			setInterval(News, 1000);
 		}
 
        // 马雅婷  第四屏
@@ -300,11 +287,13 @@
             seven_option();
             // deemo9562
 			var cw = document.body.clientWidth;
+			var LunBoNum = 0;
 			var homepageLunbo = document.getElementsByClassName("homepageLunbo");
 			bgBox.style.width = cw * (homepageLunbo.length) + "px";
 			for (var i = 0; i < homepageLunbo.length; i++) {
 				homepageLunbo[i].style.width = window.innerWidth + "px";
 			}
+			bgBox.style.left = -cw * LunBoNum + "px";
 		}
 	};
 	/*李威第三屏*/
