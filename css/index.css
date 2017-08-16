@@ -1269,33 +1269,16 @@ html,body{
     z-index: 1;
     transition: all .3s;
 }
-@keyframes se_ft {
-    0%{
-        left:-500px;
-    }
-    100%{
-        left:1050px;
-    }
-}
-@keyframes se_bot {
-    0%{
-        height:0px;
-    }
-    100%{
-        height:81px;
-    }
-}
+
 .seven_font{
     position: relative;
     width:490px;
     height:240px;
     top:255px;
-    /*left:1050px;*/
-    left: -500px;
+    left:1050px;
+    /*left: -500px;*/
     overflow: hidden;
-    animation: se_ft .5s  .3s 1;
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
+
 }
 .option_box{
     position: relative;
@@ -1383,9 +1366,7 @@ html,body{
     line-height: 70px;
     background:rgba(255,251,240,0.2);
     overflow: hidden;
-    animation: se_bot .5s  .3s 1;
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
+
 }
 .box7_bottom>div{
     float:left;
@@ -1400,6 +1381,36 @@ html,body{
     font-size: 26px;
     text-decoration: none;
 }
+@media screen and (min-width: 1440px){
+    @keyframes se_ft {
+        0%{
+            left:-500px;
+        }
+        100%{
+            left:1050px;
+        }
+    }
+    @keyframes se_bot {
+        0%{
+            height:0px;
+        }
+        100%{
+            height:81px;
+        }
+    }
+    .seven_font{
+        left:-500px;
+        animation: se_ft .5s  .3s 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+    .box7_bottom{
+        animation: se_bot .5s  .3s 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+}
+
 @media screen and (max-width: 1440px){
     .seven_font{
         left:30%;
@@ -1407,7 +1418,7 @@ html,body{
 }
 @media screen and (max-width: 720px) {
     .seven_font{
-        left:5%;
+        left:4%;
         transform: scale(0.9);
     }
     .option{
