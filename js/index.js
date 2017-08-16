@@ -4,7 +4,9 @@
 		screenScrolling()
 		function screenScrolling(){
 			let box = document.getElementById('box');
-			let openBox = document.getElementById('openBox');
+			let openBox = document.getElementById('headerul');
+			var line = document.getElementById('line')
+			// line.style.transform = "translateX(800px)"
 			//赵佳佳 第一屏下箭头点击
 			var btnOne=document.getElementsByClassName("btnOne")[0];
 			let Bbox = new Cboxc();
@@ -12,63 +14,36 @@
 			function Cboxc(){
 				this.ChuShi = function(openBox,box,btnOne){
 					this.openBox = openBox;
-					this.openBoxs = this.openBox.children;
+					this.openBoxs = document.getElementsByClassName('liBtn');
 					this.box = box;
 					this.boxs = this.box.children;
 					this.num = 0;
 					this.btnOne=btnOne;
-					this.Create();
+					// this.Create();
 					this.ClickNum();
-					this.StyleBack();
 					this.lungun();
 					this.ifOpen();
 					//赵佳佳 第一屏点击下箭头
 					this.clickOne();
-				}
-				this.Create = function(){
-					for (let i = 0; i < this.boxs.length; i++) {
-						let Inner = document.createElement('a');
-						Inner.className = 'active';
-						this.openBox.appendChild(Inner);
-					};
-				}
-				this.IfNum = function(tra){
-					if (tra == true) {
-						if (this.num < this.boxs.length-1) {
-							this.num ++;
-							this.start();
-						}else{
-							return ;
-						}
-						this.StyleBack();
-						if(this.num==6&&document.body.clientWidth>1440){
-                            document.getElementsByClassName('seven_font')[0].style.animationPlayState="running"
-                            document.getElementsByClassName('box7_bottom')[0].style.animationPlayState="running"
-						}
-					}else{
-						if (this.num > 0) {
-							this.num --;
-							this.start();
-						}else{
-							return ;
-						}
-						this.StyleBack();
-					}
-				}
-				this.StyleBack = function(){
-					this.openBoxs[this.num].style.background = 'red';
-					[...this.openBoxs].forEach(function(value,index){
-						value.style.background = '';
-					})
-					this.openBoxs[this.num].style.background = 'red';
-				}
 
+					this.numChange()
+				}
+                this.numChange = function (flag) {
+					if(flag&&this.num<this.openBoxs.length-1){
+							this.num++;
+					}else if (!flag&&this.num>0){
+						this.num--;
+					}
+                    if(this.num==6&&document.body.clientWidth>1440){
+                        document.getElementsByClassName('seven_font')[0].style.animationPlayState="running"
+                        document.getElementsByClassName('box7_bottom')[0].style.animationPlayState="running"
+                    }
+                }
 				this.ClickNum = function(){
 					this.openBox.addEventListener('click',function(e){
-						if(e.target.className == 'active'){
+						if(e.target.className == 'liBtn'){
 							console.log(this.num)
 							this.num = [...this.openBoxs].indexOf(e.target);
-							this.StyleBack();
 							this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 						}
 					}.bind(this),false)
@@ -76,11 +51,11 @@
 				this.Remove = function(event){
 					if(event.deltaY < 0){
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
-						this.IfNum(false);
+						this.numChange(false);
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 					}else if(event.deltaY > 0){
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
-						this.IfNum(true);
+						this.numChange(true);
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 					}
 				}.bind(this)
@@ -322,7 +297,7 @@
 
 		//改变屏幕大小
 		window.onresize=function() {
-            seven_option()
+            seven_option();
             // deemo9562
 			var cw = document.body.clientWidth;
 			var homepageLunbo = document.getElementsByClassName("homepageLunbo");
