@@ -4,7 +4,9 @@
 		screenScrolling()
 		function screenScrolling(){
 			let box = document.getElementById('box');
-			let openBox = document.getElementById('openBox');
+			let openBox = document.getElementById('headerul');
+			var line = document.getElementById('line')
+			// line.style.transform = "translateX(800px)"
 			//赵佳佳 第一屏下箭头点击
 			var btnOne=document.getElementsByClassName("btnOne")[0];
 			let Bbox = new Cboxc();
@@ -12,74 +14,107 @@
 			function Cboxc(){
 				this.ChuShi = function(openBox,box,btnOne){
 					this.openBox = openBox;
-					this.openBoxs = this.openBox.children;
+					this.openBoxs = document.getElementsByClassName('liBtn');
 					this.box = box;
 					this.boxs = this.box.children;
 					this.num = 0;
 					this.btnOne=btnOne;
-					this.Create();
+					// this.Create();
 					this.ClickNum();
-					this.StyleBack();
 					this.lungun();
 					this.ifOpen();
 					//赵佳佳 第一屏点击下箭头
 					this.clickOne();
-				}
-				this.Create = function(){
-					for (let i = 0; i < this.boxs.length; i++) {
-						let Inner = document.createElement('a');
-						Inner.className = 'active';
-						this.openBox.appendChild(Inner);
-					};
-				}
-				this.IfNum = function(tra){
-					if (tra == true) {
-						if (this.num < this.boxs.length-1) {
-							this.num ++;
-							this.start();
-						}else{
-							return ;
-						}
-						this.StyleBack();
-					}else{
-						if (this.num > 0) {
-							this.num --;
-							this.start();
-						}else{
-							return ;
-						}
-						this.StyleBack();
-					}
-				}
-				this.StyleBack = function(){
-					this.openBoxs[this.num].style.background = 'red';
-					[...this.openBoxs].forEach(function(value,index){
-						value.style.background = '';
-					})
-					this.openBoxs[this.num].style.background = 'red';
-				}
 
+					this.numChange();
+					this.lineChange();
+				}
+                this.numChange = function (flag) {
+					if(flag&&this.num<this.openBoxs.length-1){
+							this.num++;
+							this.start()
+					}else if (!flag&&this.num>0){
+						this.num--;
+                        this.start()
+                    }
+                    if(this.num==6&&document.body.clientWidth>1440){
+                        document.getElementsByClassName('seven_font')[0].style.animationPlayState="running"
+                        document.getElementsByClassName('box7_bottom')[0].style.animationPlayState="running"
+                    }
+                }
 				this.ClickNum = function(){
 					this.openBox.addEventListener('click',function(e){
-						if(e.target.className == 'active'){
+						if(e.target.className == 'liBtn'){
 							console.log(this.num)
 							this.num = [...this.openBoxs].indexOf(e.target);
-							this.StyleBack();
 							this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 						}
+						this.headchange();
 					}.bind(this),false)
 				}
 				this.Remove = function(event){
 					if(event.deltaY < 0){
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
-						this.IfNum(false);
+						this.numChange(false);
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 					}else if(event.deltaY > 0){
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
-						this.IfNum(true);
+						this.numChange(true);
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 					}
-				}.bind(this)
+					this.headchange()
+
+                }.bind(this)
+                //linechange wangkan//
+                this.lineChange = function () {
+                    openBox.addEventListener('mouseover',function (e) {
+                    	let posleft;
+                    	if(e.target.className == 'liBtn'){
+                    		posleft = e.target.offsetLeft;
+                            line.style.transform = 'translateX('+ posleft + 'px)'
+                        }
+                        // line.style.transform = "translateX(500px)"
+                    },false)
+					openBox.addEventListener('mouseleave',function () {
+                        let posleft = this.openBoxs[this.num].offsetLeft;
+                        line.style.transform = 'translateX('+ posleft + 'px)'
+                    }.bind(this))
+                }.bind(this);
+				// headchange wangkan
+				this.headchange = function () {
+                    line.style.transform = 'translateX('+ this.openBoxs[this.num].offsetLeft + 'px)';
+                    for(let i=0;i<this.openBoxs.length;i++){
+                        this.openBoxs[i].style.color="#ccc"
+                    }
+                    this.openBoxs[this.num].style.color="#00dfb9"
+                    if(this.num == 0){
+						for(var i =0;i<this.openBoxs.length;i++){
+							this.openBoxs[i].style.fontSize=20+'px';
+							this.openBoxs[i].style.margin = "auto 8px";
+						}
+                        line.style.width = 40+ 'px';
+                        line.style.transform = 'translateX(20px)'
+					}else if(this.num == 1){
+                        line.style.transform = 'translateX('+ this.openBoxs[1].offsetLeft + 'px)'
+                        for(var i =0;i<this.openBoxs.length;i++){
+                            this.openBoxs[i].style.fontSize=16+'px';
+                            this.openBoxs[i].style.margin = "auto 5px"
+                        }
+                        line.style.width = 32+ 'px';
+                        line.style.transform = 'translateX(120px)'
+                    } else {
+                        for(var i =0;i<this.openBoxs.length;i++){
+                            this.openBoxs[i].style.fontSize=16+'px';
+                            this.openBoxs[i].style.margin = "auto 5px"
+                        }
+                        line.style.width = 32+ 'px';
+                    }
+                }.bind(this)
+
+
+
+
+
 				this.lungun = function(){
 					window.addEventListener("mousewheel",this.Remove,false);
 				}
@@ -87,7 +122,7 @@
 					window.removeEventListener("mousewheel",this.Remove,false);
 				}
 				this.ifOpen = function(){
-					this.openBox.addEventListener('webkitTransitionEnd',function(){this.lungun()}.bind(this),false)
+					this.box.addEventListener('webkitTransitionEnd',function(){this.lungun()}.bind(this),false)
 				}
 
 				//赵佳佳 第一屏点击下箭头
@@ -100,9 +135,11 @@
 
 			}
 		}
+
 		//赵佳佳 第一屏轮播
-		NumOneLunbo();
-		function NumOneLunbo(){
+		Lunbo1();
+		function Lunbo1() {
+			// 第一屏轮播
 			var bgBox=document.getElementById("bgBox");
 			var homepageLunbo=document.getElementsByClassName("homepageLunbo");
 			var cw=document.body.clientWidth;
@@ -146,11 +183,12 @@
 				clearInterval(time);
 			}
 			moveLunBo2();
-			var LunboBtn=document.getElementsByClassName("LunboBtn");
+
+
 			function hoverBtn(){
 				for(var i=0;i<LunboBtn.length;i++){
 					LunboBtn[i].index=i;
-					LunboBtn[i].onmouseover=function(){
+					LunboBtn[i].onmouseover = function (e) {
 						clearLunBo2();
 						indexNum=LunBoNum;
 						furIndex=this.index;
@@ -161,8 +199,9 @@
 						LunboBtn[LunBoNum].style.background="#00DFB9";
 
 						var cha=furIndex-indexNum;
+
 						if (cha>0) {
-							animate(bgBox,{left:-cw},function(){
+							animate(bgBox, {left: Math.floor(-cw)}, function () {
 								var fir=bgBox.children[0];
 								bgBox.appendChild(fir);
 								bgBox.style.left=0;
@@ -172,7 +211,6 @@
 							var abs=Math.abs(cha);
 							bgBox.style.left=-cw*abs+"px";
 							for(var i=0;i<LunboBtn.length;i++){
-								// animate(bgBox,left:0,)
 								var fir2=getFirstChild(bgBox);
 								var last=getLastChild(bgBox);
 								bgBox.insertBefore(last,fir2);
@@ -181,36 +219,84 @@
 								indexNum=furIndex;
 							})
 						}
-						moveLunBo2()
+					}
+
+					LunboBtn[i].onmouseleave = function () {
+						bgBox.style.animation = "";
+						moveLunBo2();
 					}
 				}
 			}
 			hoverBtn();
 		}
 
-		//赵佳佳 新闻上下滚动
-		news();
-		function news() {
-			// 第一屏新闻上下滚动
-			var NewsAll = document.getElementsByClassName("NewsAll")[0];
-			var index = 0;
+       // 马雅婷  第四屏
+        var cutop = document.getElementsByClassName('cutop')[0];
+        cutop.addEventListener("transitionend", function() {
+            cutop.style.opacity = '1';
+        }, false);
+        var cuddiv1 = document.getElementsByClassName('cuddiv1')[0];
+        cuddiv1.addEventListener("transitionend", function() {
+            cuddiv1.style.top = '0';
+        }, false);
+        var cuddiv2 = document.getElementsByClassName('cuddiv2')[0];
+        cuddiv2.addEventListener("transitionend", function() {
+            cuddiv2.style.top = '0';
+        }, false);
+        var cuddiv3 = document.getElementsByClassName('cuddiv3')[0];
+        cuddiv3.addEventListener("transitionend", function() {
+            cuddiv3.style.top = '0';
+        }, false);
+        var cuddiv4 = document.getElementsByClassName('cuddiv4')[0];
+        cuddiv4.addEventListener("transitionend", function() {
+            cuddiv4.style.top = '0';
+        }, false);
+        var cuddiv5 = document.getElementsByClassName('cuddiv5')[0];
+        cuddiv5.addEventListener("transitionend", function() {
+            cuddiv5.style.top = '0';
+        }, false);
+        var cuddiv6 = document.getElementsByClassName('cuddiv6')[0];
+        cuddiv6.addEventListener("transitionend", function() {
+            cuddiv6.style.top = '0';
+        }, false);
+        var cuddiv7 = document.getElementsByClassName('cuddiv7')[0];
+        cuddiv7.addEventListener("transitionend", function() {
+            cuddiv7.style.top = '0';
+        }, false);
+        var cuddiv8 = document.getElementsByClassName('cuddiv8')[0];
+        cuddiv8.addEventListener("transitionend", function() {
+            cuddiv8.style.top = '0';
+        }, false);
+        var cuddiv9 = document.getElementsByClassName('cuddiv9')[0];
+        cuddiv9.addEventListener("transitionend", function() {
+            cuddiv9.style.top = '0';
+        }, false);
+        var cuddiv10 = document.getElementsByClassName('cuddiv10')[0];
+        cuddiv10.addEventListener("transitionend", function() {
+            cuddiv10.style.top = '0';
+        }, false);
+      // 跟随鼠标移动
+        var cusbutton = document.getElementById('cusbutton')
+        var cushade = document.getElementById('cushade')
+        var cushade2 = document.getElementById('cushade2')
+        var ele = document.createElement('div')
+        ele.className = 'cushade2'
+        var poTop
+        var poLeft
+        var flag = false
+        cusbutton.addEventListener('mouseover', function(event) {
+            cushade2.style.display = 'block'
+            poLeft = event.target.offsetLeft
+            poTop = event.target.offsetTop
+            cushade2.style.top = poTop + 'px'
+            cushade2.style.left = poLeft + 'px'
 
-			function News() {
-				NewsAll.style.marginTop = "";
-				if (index >= 4) {
-					index = 0;
-				} else {
-					index++;
-				}
-				NewsAll.style.marginTop = -20 * index + "px";
-			}
-
-			setInterval(News, 1000);
-		}
-
-
-
-
+        }, false)
+        cusbutton.addEventListener('mouseleave', function() {
+            var ele = document.getElementsByClassName('cushade2')
+            cushade2.style.display = 'none'
+        }, false)
+     // 第四屏结束
         // 王侃  第七屏选项卡
         seven_option()
         function seven_option() {
@@ -254,14 +340,16 @@
 
 		//改变屏幕大小
 		window.onresize=function() {
-            seven_option()
+            seven_option();
             // deemo9562
 			var cw = document.body.clientWidth;
+			var LunBoNum = 0;
 			var homepageLunbo = document.getElementsByClassName("homepageLunbo");
 			bgBox.style.width = cw * (homepageLunbo.length) + "px";
 			for (var i = 0; i < homepageLunbo.length; i++) {
 				homepageLunbo[i].style.width = window.innerWidth + "px";
 			}
+			bgBox.style.left = -cw * LunBoNum + "px";
 		}
 	};
 	/*李威第三屏*/

@@ -24,25 +24,109 @@ html,body{
       transition: ease .6s;
       position: relative;
 }
-#openBox{
-	position: fixed;
-      right: 25px;
-      top: 50%;
-      z-index: 99;
-      margin-top: -91px;
+/*//王侃//header*/
+header{
+    width: 100%;
+    height:74px;
+    position: fixed;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.3);
 }
-#openBox .active{
-	width: 10px;
-      height: 10px;
-	padding: 8px;
-	margin: 8px;
-      display: block;
-      cursor: pointer;
-      border: 1px solid #cccccc;
-      border-radius: 50%;
-      background: #000;
-      transition: all .5s ease;
+.Hfirst{
+    width:100%;
+    position: relative;
 }
+header .logo{
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    width: 150px;
+    height:46px;
+    float: left;
+}
+.logo-left{
+    position: fixed;
+    width:290px;
+    height:42px;
+    display: block;
+    background-image: url("../image/logo.png");
+    background-position: center center;
+    transition:all 0.1s;
+}
+.Hfirst>ul{
+    width:500px;
+    height:50%;
+    margin: 0 auto;
+    text-align: center;
+    bottom: 0;
+    position: relative;
+}
+.Hfirst>ul>li{
+    font-size: 20px;
+    display: inline-block;
+    margin: auto 8px;
+    line-height: 100px;
+    cursor: pointer;
+    transition: all .3s;
+    color: #ccc;
+}
+.Hfirst>ul>li:nth-of-type(1){
+    margin-left: 0;
+    color: #00dfb9;
+}
+.hotline{
+    position: fixed;
+    top: 20px;
+    right:40px;
+}
+.hotline>a{
+    display: block;
+    text-decoration: none;
+}
+.hotline>a>div{
+    font-size: 26px;
+    color:#00dfb9;
+    font-family: Arial;
+    font-weight: bold;
+    margin-top:5px;
+    text-decoration: none;
+}
+.hotline>span{
+    display: block;
+    position:fixed;
+    top: 20px;
+    right: 208px;
+    background-color: #006600;
+    width: 30px;
+    height: 30px;
+    background: url(../image/icons.png) no-repeat;
+}
+#line{
+    width:40px;
+    height:3px;
+    background-color: #00DFB9;
+    position: absolute;
+    transform: translateX(16px);
+    transition: all .3s;
+}
+@media screen and  (max-width: 1000px) {
+    #headerul{
+        display: none;
+    }
+    .logo-left{
+        background:url(../image/logo_mini.png) no-repeat;
+        margin-top:10px;
+        background-size:100px 30px;
+    }
+}
+/*//王侃//header*/
+
+
+
+
+
+
+
 
 /*第一张 赵佳佳*/
 #page1{
@@ -51,18 +135,38 @@ html,body{
 .homepageLunbo{
     float: left;
     height: 100%;
-    /*transition:all 0.5s;*/
 }
 .boxOne{
     position: relative;
 }
 #bgBox{
+    width: 500% !important;
     height: 100%;
     position: absolute;
     margin: 0!important;
     top: 0;
     left: 0;
+    /*transform: translate3d(0,0,0);*/
 }
+
+/*@keyframes moveLeft {*/
+/*0%{*/
+/*left: 0;*/
+/*}*/
+/*25%{*/
+/*left: -100%;*/
+/*}*/
+/*50%{*/
+/*left: -200%;*/
+/*}*/
+/*75%{*/
+/*left:-300%;*/
+/*}*/
+/*100%{*/
+/*left: -400%;*/
+/*}*/
+
+/*}*/
 .homepageLunbo{
     height: 100%;
 }
@@ -212,7 +316,6 @@ html,body{
 }
 .box4{
     width: 345px;
-    /*margin-top: 164px;*/
     height: auto;
     margin: 0 auto;
 }
@@ -257,7 +360,29 @@ html,body{
 .NewsAll{
     width: 100%;
     height: 100px;
-    transition:all 0.5s;
+    /*transition:all 0.5s;*/
+    animation: lunBoTop 8s ease 1s infinite;
+}
+
+@keyframes lunBoTop {
+    0% {
+        margin-top: 0px;
+    }
+    20% {
+        margin-top: -20px;
+    }
+    40% {
+        margin-top: -40px;
+    }
+    60% {
+        margin-top: -60px;
+    }
+    80% {
+        margin-top: -80px;
+    }
+    100% {
+        margin-top: 0px;
+    }
 }
 .NewsAll>li{
     width: 100%;
@@ -275,6 +400,7 @@ html,body{
 .newsMain>ul{
     width: 100%;
     height: 100%;
+    margin: 0;
     display: flex;
     justify-content:space-between;
 }
@@ -538,7 +664,8 @@ html,body{
 }
 
 #page2 .box .main_content {
-    margin: 60px auto 0;
+    margin: 0 auto;
+    margin-top: 60px;
     overflow: hidden;
     width: 1140px;
 }
@@ -548,6 +675,7 @@ html,body{
     float: left;
     width: 210px;
     height: 300px;
+    padding: 0 5px;
     background: url("../image/bg_green.png") no-repeat 0 300px;
     transition: all .4s;
     overflow: hidden;
@@ -744,15 +872,15 @@ html,body{
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
     #page2 .box .main_content {
-        width: 930px;
-        margin: 40px auto 0;
+        width: 918px;
+        margin-top: 40px;
     }
-
     #page2 .box .main_content li {
         width: 170px;
         height: 270px;
+        margin: 0;
     }
 
     #page2 .box .main_content li u {
@@ -764,23 +892,16 @@ html,body{
     }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1000px) {
     #page2 .box .main_content {
-        width: 600px;
-        margin: 0 auto;
+        width: 622px;
     }
-
     #page2 .box .main_content li {
         width: 270px;
         height: 80px;
         margin: 30px 0 0 22px;
         padding: 10px 0 6px 14px;
     }
-
-    #page2 .box .main_content li u {
-        display: none;
-    }
-
     #page2 .box .main_content li i {
         margin-top: 0;
         float: left;
@@ -792,10 +913,74 @@ html,body{
     }
 
     #page2 .box label {
-        display: none;
+        margin-top: 50px;
     }
 }
 
+@media (max-height: 570px) and (max-width: 929px), (max-width: 620px) {
+    #page2 .box .main_content {
+        width: 428px !important;
+        margin-top: 30px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 50px;
+        margin: 15px 10px 0 10px;
+    }
+
+    #page2 .box .main_content li.pc i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -145px -218px !important;
+    }
+
+    #page2 .box .main_content li.yd i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -245px -176px !important;
+    }
+
+    #page2 .box .main_content li.xt i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -249px -220px !important;
+    }
+
+    #page2 .box .main_content li.yw i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -146px -264px !important;
+    }
+
+    #page2 .box .main_content li.yf i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -253px -266px !important;
+    }
+
+    #page2 .box .main_content li strong {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    #page2 .box .main_content {
+        width: 215px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 54px;
+        margin: 15px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    #page2 .box .header i {
+        display: none;
+    }
+}
 /*杨康 第二屏css样式结束*/
 /*李丹 第六屏css 开始 */
 .six {
@@ -1109,6 +1294,305 @@ html,body{
 }
 /*李丹 第六屏css 结束 */
 
+
+/*第四屏 马雅婷*/
+.customer {
+    /*background: pink;*/
+    margin: auto;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cutop {
+    /*background: palegreen;*/
+    text-align: center;
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    margin:auto;
+    top:-400px;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+#page4:hover .cutop {
+    opacity: 1;
+}
+
+.cutop1 {
+    width: 299px;
+    height: 37px;
+    background: url(../image/1.png) no-repeat -152px -528px;
+    display: block;
+    margin: 0 auto;
+}
+
+.cutop2 {
+    font-size: 24px;
+    color: #333333;
+    line-height: 50px;
+}
+.cusbutton>div {
+    width: 230px;
+    height: 150px;
+    position: relative;
+    float: left;
+    z-index: 100;
+    opacity: 0.8;
+}
+
+.cushade2 {
+    width: 230px;
+    height: 150px;
+    position: absolute;
+    background: #E1E1E1;
+    z-index: 1;
+    transition: all .5s ease;
+    opacity: 0.5;
+}
+
+.cuddiv1 {
+    background: url(../image/5.png) no-repeat;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv1:hover {
+    background: url(../image/5.png) no-repeat 0 -150px;
+}
+
+.cuddiv2 {
+    background: url(../image/5.png) no-repeat -230px 0px;
+;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv2:hover {
+    background: url(../image/5.png) no-repeat -230px -160px;
+}
+
+.cuddiv3 {
+    background: url(../image/5.png) no-repeat -460px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv3:hover {
+    background: url(../image/5.png) no-repeat -460px -150px;
+}
+
+.cuddiv4 {
+    background: url(../image/5.png) no-repeat -690px 0px;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv4:hover {
+    background: url(../image/5.png) no-repeat -690px -160px;
+}
+
+.cuddiv5 {
+    background: url(../image/5.png) no-repeat -920px 0px;
+;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv5:hover {
+    background: url(../image/5.png) no-repeat -920px -160px;
+}
+
+.cuddiv6 {
+    background: url(../image/5.png) no-repeat -1150px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv6:hover {
+    background: url(../image/5.png) no-repeat -1150px -150px;
+}
+
+.cuddiv7 {
+    background: url(../image/5.png) no-repeat -1380px 0px;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv7:hover {
+    background: url(../image/5.png) no-repeat -1380px -160px;
+}
+
+.cuddiv8 {
+    background: url(../image/5.png) no-repeat -1610px 0px;
+;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv8:hover {
+    background: url(../image/5.png) no-repeat -1610px -160px;
+}
+
+.cuddiv9 {
+    background: url(../image/5.png) no-repeat -1840px 0px;
+;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv9:hover {
+    background: url(../image/5.png) no-repeat -1840px -160px;
+}
+
+.cuddiv10 {
+    background: url(../image/5.png) no-repeat -2070px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv10:hover {
+    background: url(../image/5.png) no-repeat -2070px -160px;
+}
+
+#page4:hover .cuddiv1 {
+    top: 0
+}
+
+#page4:hover .cuddiv2 {
+    top: 0
+}
+
+#page4:hover .cuddiv3 {
+    top: 0
+}
+
+#page4:hover .cuddiv4 {
+    top: 0
+}
+
+#page4:hover .cuddiv5 {
+    top: 0
+}
+
+#page4:hover .cuddiv6 {
+    top: 0
+}
+
+#page4:hover .cuddiv7 {
+    top: 0
+}
+
+#page4:hover .cuddiv8 {
+    top: 0
+}
+
+#page4:hover .cuddiv9 {
+    top: 0
+}
+
+#page4:hover .cuddiv10 {
+    top: 0
+}
+
+
+/* ����ƿ */
+
+@media screen and (min-width: 1000px) {
+    .customer {
+        width: 1155px;
+        height: 436px;
+    }
+    .cutop {
+        width: 100%;
+        height: 90px;
+    }
+    .cusbutton {
+        width: 100%;
+        height: 300px;
+    }
+    .cushade {
+        width: 1150px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
+        position: absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+}
+
+@media screen and (min-width: 670px) and (max-width: 1000px) {
+    .customer {
+        width: 690px;
+        height: 436px;
+    }
+    .cutop {
+        width: 690px;
+        height: 90px;
+    }
+    .cusbutton {
+        width: 690px;
+        height: 300px;
+    }
+    .cuddiv9,.cuddiv10,.cuddiv8,.cuddiv7{
+        display: none;
+    }
+    .cushade {
+        width: 690px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
+        position: absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .customer {
+        width: 500px;
+        height: 436px;
+    }
+
+    .cutop {
+        width: 500px;
+        height: 90px;
+    }
+
+    .cusbutton {
+        width: 500px;
+        height: 300px;
+    }
+
+    .cuddiv9, .cuddiv10, .cuddiv8, .cuddiv7, .cuddiv6, .cuddiv5 {
+        display: none;
+    }
+    .cushade {
+        width: 500px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
+        position: absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+}
+/*第四屏结束*/
+
 /*/王侃 第七屏CSS 开始/*/
 #page7{
     background: url(../image/wp7.jpg) no-repeat 50% 60%;
@@ -1121,6 +1605,7 @@ html,body{
     height:126px;
 }
 .option>li{
+    position: relative;
     width:80px;
     height:42px;
     line-height: 42px;
@@ -1132,6 +1617,11 @@ html,body{
     font-family: "微软雅黑",Arial;
     z-index: 3;
     background:rgba(47,208,181,0.2);
+    transition: all .2s;
+}
+.option>li:hover{
+    color: white;
+    opacity: 1;
 }
 #bg{
     position: absolute;
@@ -1143,13 +1633,16 @@ html,body{
     z-index: 1;
     transition: all .3s;
 }
+
 .seven_font{
     position: relative;
     width:490px;
     height:240px;
     top:255px;
     left:1050px;
+    /*left: -500px;*/
     overflow: hidden;
+
 }
 .option_box{
     position: relative;
@@ -1236,6 +1729,8 @@ html,body{
     bottom:0px;
     line-height: 70px;
     background:rgba(255,251,240,0.2);
+    overflow: hidden;
+
 }
 .box7_bottom>div{
     float:left;
@@ -1250,14 +1745,46 @@ html,body{
     font-size: 26px;
     text-decoration: none;
 }
+@media screen and (min-width: 1440px){
+    @keyframes se_ft {
+        0%{
+            left:-500px;
+        }
+        100%{
+            left:1050px;
+        }
+    }
+    @keyframes se_bot {
+        0%{
+            height:0px;
+        }
+        100%{
+            height:81px;
+        }
+    }
+    .seven_font{
+        left:-500px;
+        animation: se_ft .5s  .3s 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+    .box7_bottom{
+        animation: se_bot .5s  .3s 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+}
+
 @media screen and (max-width: 1440px){
     .seven_font{
+        top:20%;
         left:30%;
     }
 }
 @media screen and (max-width: 720px) {
     .seven_font{
         left:5%;
+        top:20%;
         transform: scale(0.9);
     }
     .option{
@@ -1270,8 +1797,11 @@ html,body{
         float: left;
         width: 80px;
     }
+    .box7_bottom{
+        display: none;
+    }
 }
-/*/王侃 第七屏幕CSS 结束/*/
+/*/王侃 第七屏CSS 结束/*/
 
 
 /*百艺伟第八屏样式开始*/
