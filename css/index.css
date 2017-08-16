@@ -24,25 +24,6 @@ html,body{
       transition: ease .6s;
       position: relative;
 }
-/*#openBox{*/
-	/*position: fixed;*/
-      /*right: 25px;*/
-      /*top: 50%;*/
-      /*z-index: 99;*/
-      /*margin-top: -91px;*/
-/*}*/
-/*#openBox .active{*/
-	/*width: 10px;*/
-      /*height: 10px;*/
-	/*padding: 8px;*/
-	/*margin: 8px;*/
-      /*display: block;*/
-      /*cursor: pointer;*/
-      /*border: 1px solid #cccccc;*/
-      /*border-radius: 50%;*/
-      /*background: #000;*/
-      /*transition: all .5s ease;*/
-/*}*/
 /*//王侃//header*/
 header{
     width: 100%;
@@ -75,7 +56,7 @@ header>.logo>img{
     display: none;
 }
 .Hfirst>ul{
-    width:439px;
+    width:500px;
     height:50%;
     margin: 0 auto;
     text-align: center;
@@ -83,15 +64,17 @@ header>.logo>img{
     position: relative;
 }
 .Hfirst>ul>li{
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block;
-    margin: auto 10px;
-    line-height: 74px;
-    color:#fff;
+    margin: auto 8px;
+    line-height: 100px;
     cursor: pointer;
+    transition: all .3s;
+    color: #ccc;
 }
 .Hfirst>ul>li:nth-of-type(1){
     margin-left: 0;
+    color: #00dfb9;
 }
 .hotline{
     position: fixed;
@@ -120,12 +103,18 @@ header>.logo>img{
     background: url(../image/icons.png) no-repeat;
 }
 #line{
-    width:32px;
+    width:40px;
     height:3px;
     background-color: #00DFB9;
     position: absolute;
+    transform: translateX(16px);
+    transition: all .3s;
 }
-
+@media screen and  (max-width: 1000px) {
+    #headerul{
+        display: none;
+    }
+}
 /*//王侃//header*/
 
 
@@ -671,7 +660,8 @@ header>.logo>img{
 }
 
 #page2 .box .main_content {
-    margin: 60px auto 0;
+    margin: 0 auto;
+    margin-top: 60px;
     overflow: hidden;
     width: 1140px;
 }
@@ -681,6 +671,7 @@ header>.logo>img{
     float: left;
     width: 210px;
     height: 300px;
+    padding: 0 5px;
     background: url("../image/bg_green.png") no-repeat 0 300px;
     transition: all .4s;
     overflow: hidden;
@@ -877,15 +868,15 @@ header>.logo>img{
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
     #page2 .box .main_content {
-        width: 930px;
-        margin: 40px auto 0;
+        width: 918px;
+        margin-top: 40px;
     }
-
     #page2 .box .main_content li {
         width: 170px;
         height: 270px;
+        margin: 0;
     }
 
     #page2 .box .main_content li u {
@@ -897,23 +888,16 @@ header>.logo>img{
     }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1000px) {
     #page2 .box .main_content {
-        width: 600px;
-        margin: 0 auto;
+        width: 622px;
     }
-
     #page2 .box .main_content li {
         width: 270px;
         height: 80px;
         margin: 30px 0 0 22px;
         padding: 10px 0 6px 14px;
     }
-
-    #page2 .box .main_content li u {
-        display: none;
-    }
-
     #page2 .box .main_content li i {
         margin-top: 0;
         float: left;
@@ -925,10 +909,74 @@ header>.logo>img{
     }
 
     #page2 .box label {
-        display: none;
+        margin-top: 50px;
     }
 }
 
+@media (max-height: 570px) and (max-width: 929px), (max-width: 620px) {
+    #page2 .box .main_content {
+        width: 428px !important;
+        margin-top: 30px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 50px;
+        margin: 15px 10px 0 10px;
+    }
+
+    #page2 .box .main_content li.pc i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -145px -218px !important;
+    }
+
+    #page2 .box .main_content li.yd i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -245px -176px !important;
+    }
+
+    #page2 .box .main_content li.xt i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -249px -220px !important;
+    }
+
+    #page2 .box .main_content li.yw i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -146px -264px !important;
+    }
+
+    #page2 .box .main_content li.yf i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -253px -266px !important;
+    }
+
+    #page2 .box .main_content li strong {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    #page2 .box .main_content {
+        width: 215px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 54px;
+        margin: 15px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    #page2 .box .header i {
+        display: none;
+    }
+}
 /*杨康 第二屏css样式结束*/
 /*李丹 第六屏css 开始 */
 .six {
@@ -1096,7 +1144,7 @@ header>.logo>img{
     /*background: pink;*/
     margin: auto;
     position: absolute;
-    top: 0;
+    top: 250px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1107,6 +1155,12 @@ header>.logo>img{
     text-align: center;
     opacity: 0;
     transition: all .5s ease;
+    position: absolute;
+    margin:auto;
+    top:-400px;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 #page4:hover .cutop {
@@ -1126,15 +1180,6 @@ header>.logo>img{
     color: #333333;
     line-height: 50px;
 }
-
-.cushade {
-    width: 1150px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.5);
-    /*padding-top: 45px;*/
-    position: relative;
-}
-
 .cusbutton>div {
     width: 230px;
     height: 150px;
@@ -1313,51 +1358,81 @@ header>.logo>img{
     .cusbutton {
         width: 100%;
         height: 300px;
+    }
+    .cushade {
+        width: 1150px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
         position: absolute;
-        z-index: 100;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1000px) {
+@media screen and (min-width: 670px) and (max-width: 1000px) {
     .customer {
-        width: 660px;
+        width: 690px;
         height: 436px;
     }
     .cutop {
-        width: 600px;
+        width: 690px;
         height: 90px;
     }
     .cusbutton {
         width: 690px;
         height: 300px;
-        position: absolute;
-        z-index: 100;
     }
     .cuddiv9,.cuddiv10,.cuddiv8,.cuddiv7{
         display: none;
     }
+    .cushade {
+        width: 690px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
+        position: absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
     .customer {
-        width: 300px;
+        width: 500px;
         height: 436px;
     }
 
     .cutop {
-        width: 300px;
+        width: 500px;
         height: 90px;
     }
 
     .cusbutton {
-        width: 435px;
+        width: 500px;
         height: 300px;
-        position: absolute;
-        z-index: 100;
     }
 
     .cuddiv9, .cuddiv10, .cuddiv8, .cuddiv7, .cuddiv6, .cuddiv5 {
         display: none;
+    }
+    .cushade {
+        width: 500px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.5);
+        /*padding-top: 45px;*/
+        position: absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
     }
 }
 /*第四屏结束*/
@@ -1546,12 +1621,14 @@ header>.logo>img{
 
 @media screen and (max-width: 1440px){
     .seven_font{
+        top:20%;
         left:30%;
     }
 }
 @media screen and (max-width: 720px) {
     .seven_font{
-        left:2%;
+        left:5%;
+        top:20%;
         transform: scale(0.9);
     }
     .option{
