@@ -948,13 +948,165 @@ html,body{
 
 }
 
-@media (max-width: 996px) {
-    #page2 .box .main_content {
-        width: 600px;
-        margin: 0 auto;
+@media (min-width: 601px) and (max-width: 1000px) {
+    .six-ul {
+        width: 550px !important;
+        height: 290px !important;
+        margin: 0 auto !important;
+    }
+
+    .crs, .cls {
+        display: none;
+    }
+
+    .six_move > p {
+        display: none;
+    }
+
+    .six_box > ul > li {
+        height: 170px;
+    }
+
+    .six_move > strong {
+        margin: 20px 0px 10px 0px;
     }
 }
 
+@media (min-width: 501px) and (max-width: 600px) {
+    .six_box > ul {
+        width: 500px !important;
+        height: 290px !important;
+        margin: -25px 70px;
+    }
+
+    .crs, .cls {
+        display: none;
+    }
+
+    .six_move > p {
+        display: none;
+    }
+
+    .six-ul > li {
+        width: 160px;
+        height: 69px !important;
+        margin-top: 20px !important;
+        margin-left: 40px !important;
+        /*margin-top:20px;*/
+    }
+
+    .six-ul > li > i {
+        width: 33px;
+        margin: 0 6px;
+        float: left;
+        height: 43px !important;
+        background: url(../image/words_mini.png) no-repeat -86px -380px;
+    }
+
+    .six-ul > li:nth-of-type(2) > i {
+        width: 45px;
+        background: url(../image/words_mini.png) no-repeat -124px -377px;
+    }
+
+    .six-ul > li:nth-of-type(3) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -172px -377px;
+    }
+
+    .six-ul > li:nth-of-type(4) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -219px -374px;
+    }
+
+    .six-ul > li:nth-of-type(5) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -263px -382px;
+    }
+
+    .six-ul > li:nth-of-type(6) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -86px -422px;
+    }
+
+    .six_move > strong {
+        float: left;
+        margin-top: 0px;
+        padding-left: 66px;
+        line-height: 105px;
+    }
+}
+
+@media (max-width: 500px) {
+    .six_box > ul {
+        width: 220px !important;
+        height: 378px !important;
+        margin: -108px 94px;
+    }
+
+    .box6_font > i {
+        display: none;
+    }
+
+    .crs, .cls {
+        display: none;
+    }
+
+    .six_move > p {
+        display: none;
+    }
+
+    .six-ul > li {
+        width: 160px;
+        height: 43px !important;
+        margin-top: 20px !important;
+        margin-left: 40px !important;
+        /*margin-top:20px;*/
+    }
+
+    .six-ul > li > i {
+        width: 33px;
+        margin: 0 6px;
+        float: left;
+        height: 43px !important;
+        background: url(../image/words_mini.png) no-repeat -86px -380px;
+    }
+
+    .six-ul > li:nth-of-type(2) > i {
+        width: 45px;
+        background: url(../image/words_mini.png) no-repeat -124px -377px;
+    }
+
+    .six-ul > li:nth-of-type(3) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -172px -377px;
+    }
+
+    .six-ul > li:nth-of-type(4) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -219px -374px;
+    }
+
+    .six-ul > li:nth-of-type(5) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -263px -382px;
+    }
+
+    .six-ul > li:nth-of-type(6) > i {
+        width: 42px;
+        background: url(../image/words_mini.png) no-repeat -86px -422px;
+    }
+
+    .six_move > strong {
+        float: left;
+        margin-top: 0px;
+        padding-left: 64px;
+        line-height: 94px;
+    }
+
+    .box {
+        margin-top: 0px;
+    }
+}
 /*李丹 第六屏css 结束 */
 
 /*/王侃 第七屏CSS 开始/*/
