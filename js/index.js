@@ -83,6 +83,10 @@
 				// headchange wangkan
 				this.headchange = function () {
                     line.style.transform = 'translateX('+ this.openBoxs[this.num].offsetLeft + 'px)';
+                    for(let i=0;i<this.openBoxs.length;i++){
+                        this.openBoxs[i].style.color="#ccc"
+                    }
+                    this.openBoxs[this.num].style.color="#00dfb9"
                     if(this.num == 0){
 						for(var i =0;i<this.openBoxs.length;i++){
 							this.openBoxs[i].style.fontSize=20+'px';
