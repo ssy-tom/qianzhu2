@@ -212,9 +212,73 @@
 			setInterval(News, 1000);
 		}
 
+       // 马雅婷  第四屏
+        var cutop = document.getElementsByClassName('cutop')[0];
+        cutop.addEventListener("transitionend", function() {
+            cutop.style.opacity = '1';
+        }, false);
+        var cuddiv1 = document.getElementsByClassName('cuddiv1')[0];
+        cuddiv1.addEventListener("transitionend", function() {
+            cuddiv1.style.top = '0';
+        }, false);
+        var cuddiv2 = document.getElementsByClassName('cuddiv2')[0];
+        cuddiv2.addEventListener("transitionend", function() {
+            cuddiv2.style.top = '0';
+        }, false);
+        var cuddiv3 = document.getElementsByClassName('cuddiv3')[0];
+        cuddiv3.addEventListener("transitionend", function() {
+            cuddiv3.style.top = '0';
+        }, false);
+        var cuddiv4 = document.getElementsByClassName('cuddiv4')[0];
+        cuddiv4.addEventListener("transitionend", function() {
+            cuddiv4.style.top = '0';
+        }, false);
+        var cuddiv5 = document.getElementsByClassName('cuddiv5')[0];
+        cuddiv5.addEventListener("transitionend", function() {
+            cuddiv5.style.top = '0';
+        }, false);
+        var cuddiv6 = document.getElementsByClassName('cuddiv6')[0];
+        cuddiv6.addEventListener("transitionend", function() {
+            cuddiv6.style.top = '0';
+        }, false);
+        var cuddiv7 = document.getElementsByClassName('cuddiv7')[0];
+        cuddiv7.addEventListener("transitionend", function() {
+            cuddiv7.style.top = '0';
+        }, false);
+        var cuddiv8 = document.getElementsByClassName('cuddiv8')[0];
+        cuddiv8.addEventListener("transitionend", function() {
+            cuddiv8.style.top = '0';
+        }, false);
+        var cuddiv9 = document.getElementsByClassName('cuddiv9')[0];
+        cuddiv9.addEventListener("transitionend", function() {
+            cuddiv9.style.top = '0';
+        }, false);
+        var cuddiv10 = document.getElementsByClassName('cuddiv10')[0];
+        cuddiv10.addEventListener("transitionend", function() {
+            cuddiv10.style.top = '0';
+        }, false);
+      // 跟随鼠标移动
+        var cusbutton = document.getElementById('cusbutton')
+        var cushade = document.getElementById('cushade')
+        var cushade2 = document.getElementById('cushade2')
+        var ele = document.createElement('div')
+        ele.className = 'cushade2'
+        var poTop
+        var poLeft
+        var flag = false
+        cusbutton.addEventListener('mouseover', function(event) {
+            cushade2.style.display = 'block'
+            poLeft = event.target.offsetLeft
+            poTop = event.target.offsetTop
+            cushade2.style.top = poTop + 'px'
+            cushade2.style.left = poLeft + 'px'
 
-
-
+        }, false)
+        cusbutton.addEventListener('mouseleave', function() {
+            var ele = document.getElementsByClassName('cushade2')
+            cushade2.style.display = 'none'
+        }, false)
+     // 第四屏结束
         // 王侃  第七屏选项卡
         seven_option()
         function seven_option() {

@@ -957,6 +957,278 @@ html,body{
 
 /*李丹 第六屏css 结束 */
 
+
+/*第四屏 马雅婷*/
+.customer {
+    /*background: pink;*/
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cutop {
+    /*background: palegreen;*/
+    text-align: center;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#page4:hover .cutop {
+    opacity: 1;
+}
+
+.cutop1 {
+    width: 299px;
+    height: 37px;
+    background: url(../image/1.png) no-repeat -152px -528px;
+    display: block;
+    margin: 0 auto;
+}
+
+.cutop2 {
+    font-size: 24px;
+    color: #333333;
+    line-height: 50px;
+}
+
+.cushade {
+    width: 1150px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.5);
+    /*padding-top: 45px;*/
+    position: relative;
+}
+
+.cusbutton>div {
+    width: 230px;
+    height: 150px;
+    position: relative;
+    float: left;
+    z-index: 100;
+    opacity: 0.8;
+}
+
+.cushade2 {
+    width: 230px;
+    height: 150px;
+    position: absolute;
+    background: #E1E1E1;
+    z-index: 1;
+    transition: all .5s ease;
+    opacity: 0.5;
+}
+
+.cuddiv1 {
+    background: url(../image/5.png) no-repeat;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv1:hover {
+    background: url(../image/5.png) no-repeat 0 -150px;
+}
+
+.cuddiv2 {
+    background: url(../image/5.png) no-repeat -230px 0px;
+;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv2:hover {
+    background: url(../image/5.png) no-repeat -230px -160px;
+}
+
+.cuddiv3 {
+    background: url(../image/5.png) no-repeat -460px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv3:hover {
+    background: url(../image/5.png) no-repeat -460px -150px;
+}
+
+.cuddiv4 {
+    background: url(../image/5.png) no-repeat -690px 0px;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv4:hover {
+    background: url(../image/5.png) no-repeat -690px -160px;
+}
+
+.cuddiv5 {
+    background: url(../image/5.png) no-repeat -920px 0px;
+;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv5:hover {
+    background: url(../image/5.png) no-repeat -920px -160px;
+}
+
+.cuddiv6 {
+    background: url(../image/5.png) no-repeat -1150px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv6:hover {
+    background: url(../image/5.png) no-repeat -1150px -150px;
+}
+
+.cuddiv7 {
+    background: url(../image/5.png) no-repeat -1380px 0px;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv7:hover {
+    background: url(../image/5.png) no-repeat -1380px -160px;
+}
+
+.cuddiv8 {
+    background: url(../image/5.png) no-repeat -1610px 0px;
+;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv8:hover {
+    background: url(../image/5.png) no-repeat -1610px -160px;
+}
+
+.cuddiv9 {
+    background: url(../image/5.png) no-repeat -1840px 0px;
+;
+    transition: all .5s ease;
+    top: -150px
+}
+
+.cuddiv9:hover {
+    background: url(../image/5.png) no-repeat -1840px -160px;
+}
+
+.cuddiv10 {
+    background: url(../image/5.png) no-repeat -2070px 0px;
+    transition: all .5s ease;
+    top: 150px
+}
+
+.cuddiv10:hover {
+    background: url(../image/5.png) no-repeat -2070px -160px;
+}
+
+#page4:hover .cuddiv1 {
+    top: 0
+}
+
+#page4:hover .cuddiv2 {
+    top: 0
+}
+
+#page4:hover .cuddiv3 {
+    top: 0
+}
+
+#page4:hover .cuddiv4 {
+    top: 0
+}
+
+#page4:hover .cuddiv5 {
+    top: 0
+}
+
+#page4:hover .cuddiv6 {
+    top: 0
+}
+
+#page4:hover .cuddiv7 {
+    top: 0
+}
+
+#page4:hover .cuddiv8 {
+    top: 0
+}
+
+#page4:hover .cuddiv9 {
+    top: 0
+}
+
+#page4:hover .cuddiv10 {
+    top: 0
+}
+
+
+/* ����ƿ */
+
+@media screen and (min-width: 1000px) {
+    .customer {
+        width: 1155px;
+        height: 436px;
+    }
+    .cutop {
+        width: 100%;
+        height: 90px;
+    }
+    .cusbutton {
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        z-index: 100;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .customer {
+        width: 660px;
+        height: 436px;
+    }
+    .cutop {
+        width: 600px;
+        height: 90px;
+    }
+    .cusbutton {
+        width: 690px;
+        height: 300px;
+        position: absolute;
+        z-index: 100;
+    }
+    .cuddiv9,.cuddiv10,.cuddiv8,.cuddiv7{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .customer {
+        width: 300px;
+        height: 436px;
+    }
+
+    .cutop {
+        width: 300px;
+        height: 90px;
+    }
+
+    .cusbutton {
+        width: 435px;
+        height: 300px;
+        position: absolute;
+        z-index: 100;
+    }
+
+    .cuddiv9, .cuddiv10, .cuddiv8, .cuddiv7, .cuddiv6, .cuddiv5 {
+        display: none;
+    }
+}
+/*第四屏结束*/
+
 /*/王侃 第七屏CSS 开始/*/
 #page7{
     background: url(../image/wp7.jpg) no-repeat 50% 60%;
