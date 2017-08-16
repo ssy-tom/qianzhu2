@@ -629,7 +629,8 @@ header>.logo>img{
 }
 
 #page2 .box .main_content {
-    margin: 60px auto 0;
+    margin: 0 auto;
+    margin-top: 60px;
     overflow: hidden;
     width: 1140px;
 }
@@ -639,6 +640,7 @@ header>.logo>img{
     float: left;
     width: 210px;
     height: 300px;
+    padding: 0 5px;
     background: url("../image/bg_green.png") no-repeat 0 300px;
     transition: all .4s;
     overflow: hidden;
@@ -835,15 +837,15 @@ header>.logo>img{
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
     #page2 .box .main_content {
-        width: 930px;
-        margin: 40px auto 0;
+        width: 918px;
+        margin-top: 40px;
     }
-
     #page2 .box .main_content li {
         width: 170px;
         height: 270px;
+        margin: 0;
     }
 
     #page2 .box .main_content li u {
@@ -855,23 +857,16 @@ header>.logo>img{
     }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1000px) {
     #page2 .box .main_content {
-        width: 600px;
-        margin: 0 auto;
+        width: 622px;
     }
-
     #page2 .box .main_content li {
         width: 270px;
         height: 80px;
         margin: 30px 0 0 22px;
         padding: 10px 0 6px 14px;
     }
-
-    #page2 .box .main_content li u {
-        display: none;
-    }
-
     #page2 .box .main_content li i {
         margin-top: 0;
         float: left;
@@ -883,10 +878,74 @@ header>.logo>img{
     }
 
     #page2 .box label {
-        display: none;
+        margin-top: 50px;
     }
 }
 
+@media (max-height: 570px) and (max-width: 929px), (max-width: 620px) {
+    #page2 .box .main_content {
+        width: 428px !important;
+        margin-top: 30px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 50px;
+        margin: 15px 10px 0 10px;
+    }
+
+    #page2 .box .main_content li.pc i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -145px -218px !important;
+    }
+
+    #page2 .box .main_content li.yd i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -245px -176px !important;
+    }
+
+    #page2 .box .main_content li.xt i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -249px -220px !important;
+    }
+
+    #page2 .box .main_content li.yw i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -146px -264px !important;
+    }
+
+    #page2 .box .main_content li.yf i {
+        width: 46px;
+        height: 36px;
+        background: url("../image/words_mini.png") no-repeat -253px -266px !important;
+    }
+
+    #page2 .box .main_content li strong {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    #page2 .box .main_content {
+        width: 215px !important;
+    }
+
+    #page2 .box .main_content li {
+        width: 173px;
+        height: 54px;
+        margin: 15px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    #page2 .box .header i {
+        display: none;
+    }
+}
 /*杨康 第二屏css样式结束*/
 /*李丹 第六屏css 开始 */
 .six {
