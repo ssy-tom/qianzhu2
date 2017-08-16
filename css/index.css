@@ -24,25 +24,6 @@ html,body{
       transition: ease .6s;
       position: relative;
 }
-/*#openBox{*/
-	/*position: fixed;*/
-      /*right: 25px;*/
-      /*top: 50%;*/
-      /*z-index: 99;*/
-      /*margin-top: -91px;*/
-/*}*/
-/*#openBox .active{*/
-	/*width: 10px;*/
-      /*height: 10px;*/
-	/*padding: 8px;*/
-	/*margin: 8px;*/
-      /*display: block;*/
-      /*cursor: pointer;*/
-      /*border: 1px solid #cccccc;*/
-      /*border-radius: 50%;*/
-      /*background: #000;*/
-      /*transition: all .5s ease;*/
-/*}*/
 /*//王侃//header*/
 header{
     width: 100%;
@@ -75,7 +56,7 @@ header>.logo>img{
     display: none;
 }
 .Hfirst>ul{
-    width:439px;
+    width:500px;
     height:50%;
     margin: 0 auto;
     text-align: center;
@@ -83,12 +64,13 @@ header>.logo>img{
     position: relative;
 }
 .Hfirst>ul>li{
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block;
-    margin: auto 10px;
+    margin: auto 8px;
     line-height: 74px;
     color:#fff;
     cursor: pointer;
+    transition: all .3s;
 }
 .Hfirst>ul>li:nth-of-type(1){
     margin-left: 0;
@@ -120,12 +102,18 @@ header>.logo>img{
     background: url(../image/icons.png) no-repeat;
 }
 #line{
-    width:32px;
+    width:40px;
     height:3px;
     background-color: #00DFB9;
     position: absolute;
+    transform: translateX(16px);
+    transition: all .3s;
 }
-
+@media screen and  (max-width: 720px) {
+    #headerul{
+        display: none;
+    }
+}
 /*//王侃//header*/
 
 
@@ -1590,12 +1578,14 @@ header>.logo>img{
 
 @media screen and (max-width: 1440px){
     .seven_font{
+        top:20%;
         left:30%;
     }
 }
 @media screen and (max-width: 720px) {
     .seven_font{
-        left:2%;
+        left:5%;
+        top:20%;
         transform: scale(0.9);
     }
     .option{

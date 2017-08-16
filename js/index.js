@@ -26,14 +26,17 @@
 					//赵佳佳 第一屏点击下箭头
 					this.clickOne();
 
-					this.numChange()
+					this.numChange();
+					this.lineChange();
 				}
                 this.numChange = function (flag) {
 					if(flag&&this.num<this.openBoxs.length-1){
 							this.num++;
+							this.start()
 					}else if (!flag&&this.num>0){
 						this.num--;
-					}
+                        this.start()
+                    }
                     if(this.num==6&&document.body.clientWidth>1440){
                         document.getElementsByClassName('seven_font')[0].style.animationPlayState="running"
                         document.getElementsByClassName('box7_bottom')[0].style.animationPlayState="running"
@@ -46,6 +49,7 @@
 							this.num = [...this.openBoxs].indexOf(e.target);
 							this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 						}
+						this.headchange();
 					}.bind(this),false)
 				}
 				this.Remove = function(event){
@@ -58,7 +62,55 @@
 						this.numChange(true);
 						this.box.style.transform = 'translate3d(0px,'+-this.num*100+'%, 0px)';
 					}
-				}.bind(this)
+					this.headchange()
+
+                }.bind(this)
+                //linechange wangkan//
+                this.lineChange = function () {
+                    openBox.addEventListener('mouseover',function (e) {
+                    	let posleft;
+                    	if(e.target.className == 'liBtn'){
+                    		posleft = e.target.offsetLeft;
+                            line.style.transform = 'translateX('+ posleft + 'px)'
+                        }
+                        // line.style.transform = "translateX(500px)"
+                    },false)
+					openBox.addEventListener('mouseleave',function () {
+                        let posleft = this.openBoxs[this.num].offsetLeft;
+                        line.style.transform = 'translateX('+ posleft + 'px)'
+                    }.bind(this))
+                }.bind(this);
+				// headchange wangkan
+				this.headchange = function () {
+                    line.style.transform = 'translateX('+ this.openBoxs[this.num].offsetLeft + 'px)';
+                    if(this.num == 0){
+						for(var i =0;i<this.openBoxs.length;i++){
+							this.openBoxs[i].style.fontSize=20+'px';
+							this.openBoxs[i].style.margin = "auto 8px";
+						}
+                        line.style.width = 40+ 'px';
+                        line.style.transform = 'translateX(20px)'
+					}else if(this.num == 1){
+                        line.style.transform = 'translateX('+ this.openBoxs[1].offsetLeft + 'px)'
+                        for(var i =0;i<this.openBoxs.length;i++){
+                            this.openBoxs[i].style.fontSize=16+'px';
+                            this.openBoxs[i].style.margin = "auto 5px"
+                        }
+                        line.style.width = 32+ 'px';
+                        line.style.transform = 'translateX(120px)'
+                    } else {
+                        for(var i =0;i<this.openBoxs.length;i++){
+                            this.openBoxs[i].style.fontSize=16+'px';
+                            this.openBoxs[i].style.margin = "auto 5px"
+                        }
+                        line.style.width = 32+ 'px';
+                    }
+                }.bind(this)
+
+
+
+
+
 				this.lungun = function(){
 					window.addEventListener("mousewheel",this.Remove,false);
 				}
@@ -66,7 +118,7 @@
 					window.removeEventListener("mousewheel",this.Remove,false);
 				}
 				this.ifOpen = function(){
-					this.openBox.addEventListener('webkitTransitionEnd',function(){this.lungun()}.bind(this),false)
+					this.box.addEventListener('webkitTransitionEnd',function(){this.lungun()}.bind(this),false)
 				}
 
 				//赵佳佳 第一屏点击下箭头
