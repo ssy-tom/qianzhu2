@@ -44,16 +44,14 @@ header .logo{
     height:46px;
     float: left;
 }
-.logo>span{
+.logo-left{
     position: fixed;
     width:290px;
     height:42px;
     display: block;
     background-image: url("../image/logo.png");
     background-position: center center;
-}
-header>.logo>img{
-    display: none;
+    transition:all 0.1s;
 }
 .Hfirst>ul{
     width:500px;
@@ -85,11 +83,12 @@ header>.logo>img{
     display: block;
     text-decoration: none;
 }
-.hotline>a>span{
+.hotline>a>div{
     font-size: 26px;
     color:#00dfb9;
     font-family: Arial;
     font-weight: bold;
+    margin-top:5px;
     text-decoration: none;
 }
 .hotline>span{
@@ -113,6 +112,11 @@ header>.logo>img{
 @media screen and  (max-width: 1000px) {
     #headerul{
         display: none;
+    }
+    .logo-left{
+        background:url(../image/logo_mini.png) no-repeat;
+        margin-top:10px;
+        background-size:100px 30px;
     }
 }
 /*//王侃//header*/
