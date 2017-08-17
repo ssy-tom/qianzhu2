@@ -151,7 +151,7 @@
 			for (var i = 0; i < bgBox.children.length; i++) {
 				bgBox.children[i].style.width=cw+'px'
 			};
-			Timer = setInterval(Main,2000);
+			Timer = setInterval(Main,3000);
 			function Main(){
 				NumIn++;
 				XinNum ++;
@@ -181,15 +181,15 @@
 				clearInterval(Timer);
 			}
 			BgBtnBox.onmouseout = function(){
-				Timer = setInterval(Main,2000)
+				Timer = setInterval(Main,3000)
 			}
 			function animtion(obj,target){
 				clearInterval(obj.Timer);
-				let speen = obj.offsetLeft < target ? 15 : -15;
+				let speen = obj.offsetLeft < target ? 20 : -20;
 				obj.Timer = setInterval(function(){
 					let seates = target - obj.offsetLeft;
 					obj.style.left = obj.offsetLeft + speen + 'px';
-					if (Math.abs(seates) <= 15){
+					if (Math.abs(seates) <= 20){
 						obj.style.left = target + 'px';
 						clearInterval(obj.Timer)
 					}
