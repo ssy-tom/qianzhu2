@@ -140,94 +140,61 @@
 		Lunbo1();
 		function Lunbo1() {
 			// 第一屏轮播
-			var bgBox=document.getElementById("bgBox");
-			var homepageLunbo=document.getElementsByClassName("homepageLunbo");
-			var cw=document.body.clientWidth;
-			bgBox.style.width=cw*(homepageLunbo.length)+"px";
-			var LunBoNum=0;
-			var indexNum=0;
-			var furIndex=0;
-			var time;
-			var LunboBtn=document.getElementsByClassName("LunboBtn");
-			// 获取第一个子元素
-			function getFirstChild(obj){
-				return obj.children[0];
-			}
-			function getLastChild(obj){
-				return obj.children[obj.children.length-1];
-			}
-			for (var i = 0; i < homepageLunbo.length; i++) {
-				homepageLunbo[i].style.width=cw+'px'
+			let bgBox = document.getElementById('bgBox');
+			let BgBtnBox = document.getElementById('BgBtnBox');
+			let LunboBtn = document.getElementsByClassName('LunboBtn');
+			let cw=document.body.clientWidth;
+			bgBox.style.width=cw*(bgBox.children.length)+"px";
+			let NumIn = 0;
+			var XinNum = 0;
+			let Timer = null;
+			for (var i = 0; i < bgBox.children.length; i++) {
+				bgBox.children[i].style.width=cw+'px'
 			};
-
-			function move(){
-				LunBoNum++;
-				if (LunBoNum>LunboBtn.length-1) {
-					LunBoNum=0;
-				};
-				animate(bgBox,{left:-cw},function(){
-					var fir=bgBox.children[0];
-					bgBox.appendChild(fir);
-					bgBox.style.left=0
-
-					for(var j=0;j<LunboBtn.length;j++){
-						LunboBtn[j].style.background=""
-					}
-					LunboBtn[LunBoNum].style.background="#00DFB9"
-				})
+			Timer = setInterval(Main,2000);
+			function Main(){
+				NumIn++;
+				XinNum ++;
+				if(NumIn > bgBox.children.length - 1){
+					NumIn = 1;
+					bgBox.style.left = 0;
+				}
+				animtion(bgBox,-NumIn*cw);
+				XinNum = XinNum>LunboBtn.length-1?0:XinNum;
+				for (let i = 0; i < LunboBtn.length; i ++){
+					LunboBtn[i].style.background = '#fff';
+				}
+				LunboBtn[XinNum].style.background = '#00dfb9';
 			}
-			function moveLunBo2(){
-				time=setInterval(move,2000);
-			}
-			function clearLunBo2(){
-				clearInterval(time);
-			}
-			moveLunBo2();
-
-
-			function hoverBtn(){
-				for(var i=0;i<LunboBtn.length;i++){
-					LunboBtn[i].index=i;
-					LunboBtn[i].onmouseover = function (e) {
-						clearLunBo2();
-						indexNum=LunBoNum;
-						furIndex=this.index;
-						LunBoNum=this.index;
-						for(var j=0;j<LunboBtn.length;j++){
-							LunboBtn[j].style.background=""
-						}
-						LunboBtn[LunBoNum].style.background="#00DFB9";
-
-						var cha=furIndex-indexNum;
-
-						if (cha>0) {
-							animate(bgBox, {left: Math.floor(-cw)}, function () {
-								var fir=bgBox.children[0];
-								bgBox.appendChild(fir);
-								bgBox.style.left=0;
-								indexNum=furIndex;
-							})
-						}else{
-							var abs=Math.abs(cha);
-							bgBox.style.left=-cw*abs+"px";
-							for(var i=0;i<LunboBtn.length;i++){
-								var fir2=getFirstChild(bgBox);
-								var last=getLastChild(bgBox);
-								bgBox.insertBefore(last,fir2);
-							}
-							animate(bgBox,{left:0},function(){
-								indexNum=furIndex;
-							})
-						}
+			for(var i=0;i<LunboBtn.length;i++){
+				LunboBtn[i].index = i;
+				LunboBtn[i].onmouseover = function () {
+					for (let i = 0; i < LunboBtn.length; i ++){
+						LunboBtn[i].style.background = '#fff';
 					}
-
-					LunboBtn[i].onmouseleave = function () {
-						bgBox.style.animation = "";
-						moveLunBo2();
-					}
+					LunboBtn[this.index].style.background = '#00dfb9';
+					animtion(bgBox,-this.index*cw)
+					NumIn = XinNum = this.index;
 				}
 			}
-			hoverBtn();
+			BgBtnBox.onmouseover = function(){
+				clearInterval(Timer);
+			}
+			BgBtnBox.onmouseout = function(){
+				Timer = setInterval(Main,2000)
+			}
+			function animtion(obj,target){
+				clearInterval(obj.Timer);
+				let speen = obj.offsetLeft < target ? 15 : -15;
+				obj.Timer = setInterval(function(){
+					let seates = target - obj.offsetLeft;
+					obj.style.left = obj.offsetLeft + speen + 'px';
+					if (Math.abs(seates) <= 15){
+						obj.style.left = target + 'px';
+						clearInterval(obj.Timer)
+					}
+				},10)
+			}
 		}
 
        // 马雅婷  第四屏
