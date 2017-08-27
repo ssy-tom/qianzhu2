@@ -319,7 +319,50 @@
 			bgBox.style.left = -cw * LunBoNum + "px";
 		}
 	};
-	/*李威第三屏*/
+    /*李威第三屏*/
+   function banner() {
+            var Next = document.getElementById('next');
+            var Prev = document.getElementById('prev');
+            var Full = document.getElementsByClassName('full-box')[0];
+            var MineIndex = document.getElementsByClassName('min-slide');
+            var time;
+            var index = 0;
+            Next.addEventListener('click', function () {
+                clearInterval(time);
+                index++;
+                if (index < MineIndex.length) {
+                    Full.style.transform = 'translatex(' + (-340 * index) + 'px)';
+                    Full.style.transform = 'all 0.4s';
+                } else {
+                    index = 0;
+                    Full.style.transform = 'translatex(' + (-340 * index) + 'px)';
+                }
+            }, false);
+            Prev.addEventListener('click', function () {
+                clearInterval(time);
+                index--;
+                if (index < 0) {
+                    index = 2;
+                    Full.style.left = 'translatex(' + (-340 * index) + 'px)';
+                }
+                Full.style.transform = 'translatex(' + (-340 * index) + 'px)';
+            }, false);
+            time = setInterval(function () {
+                index++;
+                if (index < MineIndex.length) {
+                    Full.style.transform = 'translatex(' + (-340 * index) + 'px)';
+                    Full.style.transform = 'all 0.4s';
+                } else {
+                    index = 0;
+                    Full.style.transform = 'translatex(' + (-340 * index) + 'px)';
+                }
+            }, 3000)
+    }
+   document.on=function () {
+       banner();
+
+   };
+	banner();  
     var slideUP=$('.shade_up').innerHeight();
     var slideDown=$('.shade_dowm').innerHeight();
     $(".box_shade").each(function(index){

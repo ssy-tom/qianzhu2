@@ -1929,14 +1929,14 @@ header .logo{
     border: 1px  solid rgba(0,0,0,0);
 }
 .cases .box .caption {
-    margin-top: 5%;
+  margin-top: 10%;
     width: 100%;
     text-align: center;
     transition: all .5s ease-in-out 0s;
 }
 .cases .box .caption i {
     display: block;
-    margin: 0px auto;
+    margin: 0 auto;
     margin-bottom: 20px;
     width: 129px;
     height: 37px;
@@ -1946,6 +1946,7 @@ header .logo{
     font-size: 24px;
     letter-spacing: 3px;
     padding-left: 10px;
+    color:#000;
 }
 .clear {
     clear: both;
@@ -1965,7 +1966,7 @@ header .logo{
 
 }
 
-.shade_content img{
+.shade_content>img{
     width: 320px;
     height: 200px;
     border:none;
@@ -1981,7 +1982,7 @@ header .logo{
     z-index: 999;
     cursor: pointer;
 }
-.shade_content p {
+.shade_content>p {
     position: absolute;
     margin: 0px 88px;
     color:#999999;
@@ -1989,7 +1990,7 @@ header .logo{
     font-size: 12px;
     line-height: 26px;
 }
-.shade_content p strong{
+.shade_content>p>strong{
     color:#222;
     font-weight: normal;
 }
@@ -2018,9 +2019,9 @@ header .logo{
     background: url(../image/icons.png) no-repeat 0px -168px;
 }
 
-.shade_dowm p {
+.shade_dowm>p {
     position: absolute;
-    margin: 0px 88px;
+    margin: 0 88px;
     color: #fff;
     font-family: Arial,"宋体";
     font-size: 12px;
@@ -2028,13 +2029,12 @@ header .logo{
     text-indent: 2rem;
 
 }
-.shade_dowm p strong{
+.shade_dowm>p>strong{
     font-weight: normal;
 }
 .slide_btn{
-    margin-top: 50px;
     width: 200px;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 a.more {
     top: 700px;
@@ -2043,26 +2043,24 @@ a.more {
     color: #00dfb9;
     font-size: 26px;
     text-align: center;
-    text-decoration: none;
     border: 1px dotted #00dfb9;
     transition: all .3s ease-in-out 0s,top .8s ease-in-out 0s;
     display: inline-block;
+    text-decoration: none;
 }
 a.more:hover{
     background-color: #0EE1BD;
     color: #fff;
     transition: all .5s ease-in-out;
+    text-decoration: none;
 }
 
 
 @media (max-width: 1150px){
-
     .cases .box #cases_box {
         width: 840px;
     }
-
 }
-
 .cases .box #cases_box {
     margin: 0 auto;
     margin-top: 60px;
@@ -2094,14 +2092,113 @@ a.more:hover{
     .cases .box #cases_box .box_shade .shade_up u {
         margin-top: 54px;
     }
-    .cases .box #cases_box .box_shade img {
+    .cases .box #cases_box .box_shade>.shade_content>img {
         width: 260px;
-        height: 153px;
+        height: 153px!important;
     }
     .cases .box #cases_box .box_shade .shade_dowm {
         width: 260px;
         height: 100px;
         bottom: -100px;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait){
+ a.next {
+    right: 30px;
+    background: url(../image/icons.png) no-repeat -25px -219px;
+    display: block;
+    position: absolute;
+    top: -300px;
+    width: 16px;
+    height: 30px;
+    cursor: pointer;
+    transition: all .3s ease-in-out 0s;
+    z-index: 100;
+}
+}
+
+
+@media (max-width: 835px) and (orientation: portrait){
+#cases_box{
+    display: none;
+}
+ #shade_up{
+     visibility: hidden!important;
+ }
+ #shade_dowm{
+     visibility: hidden!important;
+ }
+#box_shade{
+    visibility: hidden!important;
+    opacity: 0;
+   }
+
+}  @media (max-width:835px) and (orientation: portrait){
+ .min-container{
+        width: 340px;
+        height: 300px;
+        position: relative;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+.full-box{
+    left: 0;
+    width: 1120px;
+    height: inherit;
+    transition: all 0.5s;
+    position: absolute;
+}
+.min-slide{
+    width: 340px;
+    height: 300px;
+    float: left;
+    background-color: #ffffff;
+}
+.min-down{
+    border-bottom:5px solid #2FD0B5 ;
+   height: 98px;
+    line-height: 30px;
+
+}
+.min-down p{
+    text-align: left;
+    padding-left: 15px;
+    color: #999999;
+}
+  .min-down p strong{
+      text-align: left;
+      color: #222222;
+      font-weight: normal;
+ }
+.box{
+    position: relative;
+}
+.box>a{
+    position: absolute;
+    width: 16px;
+    height:30px;
+    top:45%;
+    cursor: pointer;
+}
+.box>a#next{
+    right: 30px;
+    background: url(../image/icons.png) no-repeat -25px -219px;
+}
+.box>a#prev{
+    left: 30px;
+    background: url(../image/icons.png) no-repeat 0px -219px;
+}
+}
+@media (min-width: 835px){
+    .min-container{
+    display: none;
+    }
+    #next{
+opacity: 0!important;
+    }
+    #prev{
+ opacity: 0!important;
     }
 }
 /*李威第第三屏结束*/
